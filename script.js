@@ -1,7 +1,8 @@
 
-const projects = [{"id": "makarov", "title": "Девушки с Макаровым", "status": "В эфире", "genre": "Комедия • 16+", "posterImage": "makarov_poster.webp", "info": [["Студия", "Norm Production по заказу Comedy Club Production"], ["Дата старта", "09.03.2021"], ["Дата окончания", "06.02.2025"], ["Длительность выпуска", "30 мин"], ["Количество сезонов", "5"], ["Количество выпусков", "100"], ["Доля,% 14-44 0+", "7,8"], ["Доля,% канала за период показа", "6,2"], ["Отношение к доле,% канала за период показа", "25%"], ["Рейтинг Кинопоиск", "8,5"]], "cast": [["Павел Майков", "Павел Макаров"], ["Алевтина Тукан", "Анна Туркина"], ["Валерия Астапова", "Екатерина Синицкая"], ["Влада Ермолаева", "Александра Попова"], ["Елена Полянская", "Олеся Верба"], ["Олеся Судзиловская", "Ольга Романова"], ["Георгий Дронов", "Роман Жилин"]], "seasons": [["Сезон 1", "20 эпизодов", "09.03.2021 — 01.04.2021", "14,6"], ["Сезон 2", "20 эпизодов", "31.01.2022 — 02.03.2022", "11,0"], ["Сезон 3", "20 эпизодов", "24.10.2022 — 23.11.2022", "8,7"], ["Сезон 4", "20 эпизодов", "11.12.2023 — 26.12.2023", "10,5"], ["Сезон 5", "20 эпизодов", "20.01.2025 — 06.02.2025", "7,8"]], "compare": [14.6, 11.0, 8.7, 10.5, 7.8]}];
+const projects = [{"id": "makarov", "title": "Девушки с Макаровым", "status": "В эфире", "genre": "Комедия • 16+", "posterImage": "makarov_poster.webp", "info": [["Студия", "Norm Production по заказу Comedy Club Production"], ["Дата старта", "09.03.2021"], ["Дата окончания", "06.02.2025"], ["Длительность выпуска", "30 мин"], ["Количество сезонов", "5"], ["Количество выпусков", "100"], ["Средняя доля проекта 14-44 0+", "7,8"], ["Доля,% канала за период показа", "6,2"], ["Отношение к доле,% канала за период показа", "25%"], ["Рейтинг Кинопоиск", "8,5"]], "cast": [["Павел Майков", "Павел Макаров"], ["Алевтина Тукан", "Анна Туркина"], ["Валерия Астапова", "Екатерина Синицкая"], ["Влада Ермолаева", "Александра Попова"], ["Елена Полянская", "Олеся Верба"], ["Олеся Судзиловская", "Ольга Романова"], ["Георгий Дронов", "Роман Жилин"]], "seasons": [["Сезон 1", "20 эпизодов", "09.03.2021 — 01.04.2021", "14,6"], ["Сезон 2", "20 эпизодов", "31.01.2022 — 02.03.2022", "11,0"], ["Сезон 3", "20 эпизодов", "24.10.2022 — 23.11.2022", "8,7"], ["Сезон 4", "20 эпизодов", "11.12.2023 — 26.12.2023", "10,5"], ["Сезон 5", "20 эпизодов", "20.01.2025 — 06.02.2025", "7,8"]], "compare": [14.6, 11.0, 8.7, 10.5, 7.8]}];
 const seasonTimelineData = {"1": [{"episode": 1, "date": "09.03.2021", "share": 14.8}, {"episode": 2, "date": "09.03.2021", "share": 16.13}, {"episode": 3, "date": "10.03.2021", "share": 13.72}, {"episode": 4, "date": "10.03.2021", "share": 14.93}, {"episode": 5, "date": "11.03.2021", "share": 13.86}, {"episode": 6, "date": "11.03.2021", "share": 15.2}, {"episode": 7, "date": "15.03.2021", "share": 11.13}, {"episode": 8, "date": "16.03.2021", "share": 14.2}, {"episode": 9, "date": "17.03.2021", "share": 13.11}, {"episode": 10, "date": "18.03.2021", "share": 13.17}, {"episode": 11, "date": "22.03.2021", "share": 14.37}, {"episode": 12, "date": "23.03.2021", "share": 15.0}, {"episode": 13, "date": "24.03.2021", "share": 14.86}, {"episode": 14, "date": "25.03.2021", "share": 13.82}, {"episode": 15, "date": "29.03.2021", "share": 15.11}, {"episode": 16, "date": "29.03.2021", "share": 15.83}, {"episode": 17, "date": "30.03.2021", "share": 12.29}, {"episode": 18, "date": "30.03.2021", "share": 13.72}, {"episode": 19, "date": "31.03.2021", "share": 15.0}, {"episode": 20, "date": "01.04.2021", "share": 18.97}], "2": [{"episode": 1, "date": "31.01.2022", "share": 11.33}, {"episode": 2, "date": "31.01.2022", "share": 12.54}, {"episode": 3, "date": "31.01.2022", "share": 12.76}, {"episode": 4, "date": "01.02.2022", "share": 12.77}, {"episode": 5, "date": "02.02.2022", "share": 12.55}, {"episode": 6, "date": "03.02.2022", "share": 11.55}, {"episode": 7, "date": "07.02.2022", "share": 11.08}, {"episode": 8, "date": "08.02.2022", "share": 12.94}, {"episode": 9, "date": "09.02.2022", "share": 12.1}, {"episode": 10, "date": "10.02.2022", "share": 9.81}, {"episode": 11, "date": "14.02.2022", "share": 10.23}, {"episode": 12, "date": "15.02.2022", "share": 10.25}, {"episode": 13, "date": "16.02.2022", "share": 10.56}, {"episode": 14, "date": "17.02.2022", "share": 10.39}, {"episode": 15, "date": "21.02.2022", "share": 12.6}, {"episode": 16, "date": "22.02.2022", "share": 8.83}, {"episode": 17, "date": "24.02.2022", "share": 12.09}, {"episode": 18, "date": "28.02.2022", "share": 7.21}, {"episode": 19, "date": "01.03.2022", "share": 9.06}, {"episode": 20, "date": "02.03.2022", "share": 9.48}], "3": [{"episode": 1, "date": "24.10.2022", "share": 7.56}, {"episode": 2, "date": "24.10.2022", "share": 9.57}, {"episode": 3, "date": "25.10.2022", "share": 7.35}, {"episode": 4, "date": "26.10.2022", "share": 6.94}, {"episode": 5, "date": "27.10.2022", "share": 6.04}, {"episode": 6, "date": "31.10.2022", "share": 9.3}, {"episode": 7, "date": "01.11.2022", "share": 9.77}, {"episode": 8, "date": "02.11.2022", "share": 9.11}, {"episode": 9, "date": "03.11.2022", "share": 7.62}, {"episode": 10, "date": "07.11.2022", "share": 8.98}, {"episode": 11, "date": "08.11.2022", "share": 9.94}, {"episode": 12, "date": "09.11.2022", "share": 9.03}, {"episode": 13, "date": "10.11.2022", "share": 7.92}, {"episode": 14, "date": "14.11.2022", "share": 8.99}, {"episode": 15, "date": "15.11.2022", "share": 9.87}, {"episode": 16, "date": "16.11.2022", "share": 9.17}, {"episode": 17, "date": "17.11.2022", "share": 9.93}, {"episode": 18, "date": "21.11.2022", "share": 10.14}, {"episode": 19, "date": "22.11.2022", "share": 9.71}, {"episode": 20, "date": "23.11.2022", "share": 7.61}], "4": [{"episode": 1, "date": "11.12.2023", "share": 9.2}, {"episode": 2, "date": "11.12.2023", "share": 8.85}, {"episode": 3, "date": "11.12.2023", "share": 7.6}, {"episode": 4, "date": "11.12.2023", "share": 8.85}, {"episode": 5, "date": "12.12.2023", "share": 13.06}, {"episode": 6, "date": "12.12.2023", "share": 13.5}, {"episode": 7, "date": "12.12.2023", "share": 14.19}, {"episode": 8, "date": "13.12.2023", "share": 11.03}, {"episode": 9, "date": "13.12.2023", "share": 11.61}, {"episode": 10, "date": "13.12.2023", "share": 12.01}, {"episode": 11, "date": "14.12.2023", "share": 11.42}, {"episode": 12, "date": "14.12.2023", "share": 12.64}, {"episode": 13, "date": "14.12.2023", "share": 12.14}, {"episode": 14, "date": "18.12.2023", "share": 9.14}, {"episode": 15, "date": "19.12.2023", "share": 10.84}, {"episode": 16, "date": "20.12.2023", "share": 9.14}, {"episode": 17, "date": "21.12.2023", "share": 9.52}, {"episode": 18, "date": "25.12.2023", "share": 8.31}, {"episode": 19, "date": "26.12.2023", "share": 8.65}, {"episode": 20, "date": "26.12.2023", "share": 8.82}], "5": [{"episode": 1, "date": "20.01.2025", "share": 7.07}, {"episode": 2, "date": "20.01.2025", "share": 6.3}, {"episode": 3, "date": "21.01.2025", "share": 7.5}, {"episode": 4, "date": "22.01.2025", "share": 6.23}, {"episode": 5, "date": "23.01.2025", "share": 6.66}, {"episode": 6, "date": "27.01.2025", "share": 8.57}, {"episode": 7, "date": "27.01.2025", "share": 8.22}, {"episode": 8, "date": "28.01.2025", "share": 8.85}, {"episode": 9, "date": "28.01.2025", "share": 8.13}, {"episode": 10, "date": "29.01.2025", "share": 7.34}, {"episode": 11, "date": "29.01.2025", "share": 7.43}, {"episode": 12, "date": "30.01.2025", "share": 6.55}, {"episode": 13, "date": "30.01.2025", "share": 6.83}, {"episode": 14, "date": "03.02.2025", "share": 9.33}, {"episode": 15, "date": "03.02.2025", "share": 9.48}, {"episode": 16, "date": "04.02.2025", "share": 7.93}, {"episode": 17, "date": "04.02.2025", "share": 7.12}, {"episode": 18, "date": "05.02.2025", "share": 7.84}, {"episode": 19, "date": "05.02.2025", "share": 8.85}, {"episode": 20, "date": "06.02.2025", "share": 8.45}]};
 
+const weekdayData={"1": [{"day": "пн", "share": 14.11}, {"day": "вт", "share": 14.36}, {"day": "ср", "share": 14.32}, {"day": "чт", "share": 14.01}], "2": [{"day": "пн", "share": 11.11}, {"day": "вт", "share": 10.77}, {"day": "ср", "share": 11.74}, {"day": "чт", "share": 12.56}], "3": [{"day": "пн", "share": 9.09}, {"day": "вт", "share": 9.33}, {"day": "ср", "share": 8.75}, {"day": "чт", "share": 7.88}], "4": [{"day": "пн", "share": 8.66}, {"day": "вт", "share": 12.05}, {"day": "ср", "share": 10.28}, {"day": "чт", "share": 11.43}], "5": [{"day": "пн", "share": 8.16}, {"day": "вт", "share": 8.06}, {"day": "ср", "share": 7.54}, {"day": "чт", "share": 6.68}]};
 let current = projects[0];
 let showAllCast = false;
 const $ = id => document.getElementById(id);
@@ -51,7 +52,6 @@ function renderProject() {
     <div class="season">
       <div><b>${s[0]}</b><br><span class="muted">${s[1]}</span></div>
       <div><span class="muted">Период премьеры</span><br>${s[2]}<br><span class="muted">Средняя доля: ${s[3]}%</span></div>
-      <div class="arrow">›</div>
     </div>
   `).join('');
 }
@@ -124,6 +124,34 @@ function renderSeasonTimeline() {
   const container = $('seasonTimelineChart');
   if (!selector || !container) return;
   const season = selector.value || '1';
+ const mode=(document.getElementById('timelineModeSelect')||{value:'dates'}).value;
+ if(mode==='weekday'){
+   const d=weekdayData[season]||[];
+   const max=Math.max(...d.map(x=>x.share));
+   container.style.overflowX='hidden';
+
+   const w = 360;
+   const h = 235;
+   const baseY = 190;
+   const plotH = 135;
+   const barW = 42;
+   const step = 72;
+   const startX = 34;
+
+   container.innerHTML=`<svg class='weekdaySvg' viewBox='0 0 ${w} ${h}' preserveAspectRatio='none'>
+     <line x1='18' y1='${baseY}' x2='342' y2='${baseY}' stroke='rgba(255,255,255,.22)' stroke-width='1'/>
+     ${d.map((r,i)=>{
+       const barH = Math.max(8, r.share/max*plotH);
+       const x = startX+i*step;
+       const y = baseY-barH;
+       return `<text x='${x+barW/2}' y='${y-8}' font-size='12' font-weight='700' text-anchor='middle' fill='white'>${String(r.share).replace('.', ',')}</text>
+       <rect x='${x}' y='${y}' width='${barW}' height='${barH}' rx='7' fill='#00E5FF'/>
+       <text x='${x+barW/2}' y='215' font-size='12' text-anchor='middle' fill='#A7A9C2'>${r.day}</text>`;
+     }).join('')}
+   </svg>`;
+   return;
+ }
+ container.style.overflowX='auto';
   const data = seasonTimelineData[season] || [];
   if (!data.length) {
     container.innerHTML = '<div class="muted">Нет данных</div>';

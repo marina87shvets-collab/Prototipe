@@ -20,11 +20,11 @@
   <div class="section"><h2>Каст</h2><button id="castToggle" onclick="toggleCast()">Показать всех</button></div>
   <div class="card"><table id="cast"></table></div>
   <h2>Сезоны</h2><div id="seasons" class="card"></div>
-  <div class="actions"><button class="primary" onclick="analytics()">▥ Показать график</button><button class="secondary" onclick="analytics()">⚖ Сравнить сезоны</button></div>
+  <div class="actions"><button class="secondary" onclick="analytics()">⚖ Сравнить сезоны</button></div>
 </section>
 
 <section id="analytics" class="screen">
-  <div class="head"><button onclick="show('project')" class="back">‹</button><h1>Аналитика</h1><button onclick="show('project')" class="back">⌯</button></div>
+  <div class="head"><button onclick="show('project')" class="back">‹</button><h1>Сравнение</h1><button onclick="show('project')" class="back">⌯</button></div>
 
   <div class="card">
     <h2>Сравнение сезонов по средней доле (%)</h2>
@@ -32,8 +32,8 @@
   </div>
 
   <div class="card" id="timelineCard">
-    <h2>Динамика доли по датам</h2>
-    <select id="timelineSeasonSelect" onchange="renderSeasonTimeline()">
+    <h2>Динамика доли сезонов</h2>
+    <select id="timelineModeSelect" onchange="renderSeasonTimeline()"><option value="dates">По датам</option><option value="weekday">По дням недели</option></select><br><br><select id="timelineSeasonSelect" onchange="renderSeasonTimeline()">
       <option value="1">Сезон 1</option>
       <option value="2">Сезон 2</option>
       <option value="3">Сезон 3</option>
@@ -48,7 +48,7 @@
     <table id="heat"></table>
   </div>
 
-  <footer><span>⌕<br>Поиск</span><span>▣<br>Проекты</span><span class="on">▥<br>Аналитика</span><span>⚖<br>Сравнение</span><span>☰<br>Ещё</span></footer>
+  <footer><span onclick="show('search')">⌕<br>Поиск</span><span onclick="show('project')">▣<br>Проекты</span><span class="on" onclick="analytics()">⚖<br>Сравнение</span></footer>
 </section>
 </main>
 <script src="script.js"></script>

@@ -205,3 +205,24 @@ footer{position:sticky;bottom:-28px;margin:12px -16px -28px;height:76px;display:
 .timelinePoint:hover{fill:#FFD84A;stroke:#E8C57C}
 .timelineLabel{fill:#A7A9C2;font-size:9px}
 .card h2{font-size:14px;line-height:1.25}
+
+/* v23: hide season arrows */
+.arrow{display:none!important;}
+footer span{cursor:pointer;}
+
+
+/* v30: weekday chart without horizontal scrollbar */
+.weekdaySvg{
+  width:100% !important;
+  min-width:0 !important;
+  height:250px;
+  display:block;
+}
+
+/* v31: larger weekday chart, no horizontal scroll */
+#seasonTimelineChart .weekdaySvg{
+  width:100% !important;
+  min-width:0 !important;
+  height:250px !important;
+  display:block;
+}
