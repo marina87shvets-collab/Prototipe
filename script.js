@@ -237,27 +237,102 @@ function renderHeatmap() {
   const values = rows.flatMap(r => r.slice(1));
   const minValue = Math.min(...values);
   const maxValue = Math.max(...values);
-  const tooltips = {
-    "1-5": "Купцы и дети. 1 сезон 7,07",
-    "2-5": "Девушки с Макаровым. 5 сезон 6,3",
-    "3-5": "Девушки с Макаровым. 5 сезон 7,5",
-    "4-5": "Девушки с Макаровым. 5 сезон 6,23",
-    "5-5": "Девушки с Макаровым. 5 сезон 6,66"
-  };
 
   function cell(value, index, rowNumber) {
     if (index === 0) return `<td>${value}</td>`;
     const ratio = (value - minValue) / (maxValue - minValue || 1);
     const cls = ratio < 0.25 ? 'low' : ratio > 0.75 ? 'hot' : '';
-    const key = `${rowNumber}-${index}`;
-    const tooltip = tooltips[key] || `Сезон ${index}, серия ${rowNumber}: ${String(value).replace('.', ',')}`;
-    const safeTooltip = tooltip.replace(/"/g, '&quot;');
-    return `<td class="${cls} heatCell" data-value="${value}" data-tooltip="${safeTooltip}" title="${safeTooltip}" style="background:${heatColor(value, minValue, maxValue)}">${String(value).replace('.', ',')}</td>`;
+    const isEnvironmentCell = rowNumber === 1 && index === 5;
+    const clickAttr = isEnvironmentCell ? ' onclick="openEnvironment()" role="button" aria-label="Открыть окружение для 1 серии 5 сезона"' : '';
+    const extraCls = isEnvironmentCell ? ' environmentTrigger' : '';
+    return `<td class="${cls} heatCell${extraCls}" data-value="${value}"${clickAttr} style="background:${heatColor(value, minValue, maxValue)}">${String(value).replace('.', ',')}</td>`;
   }
 
   heat.innerHTML =
     '<tr><th>Серия</th><th>Сезон 1</th><th>Сезон 2</th><th>Сезон 3</th><th>Сезон 4</th><th>Сезон 5</th></tr>' +
     rows.map(r => `<tr>${r.map((v, i) => cell(v, i, r[0])).join('')}</tr>`).join('');
+}
+
+const environmentData = [
+  { label: "19:34\nПОЛЯРНЫЙ 4\nСезон 4 Серия 17", share: 8.382, accent: "blue" },
+  { label: "20:02\\nКупцы и дети\\nСезон 1 Серия 1", share: 8.822, accent: "blue" },
+  { label: "20:24\\nКупцы и дети\\nСезон 1 Серия 2", share: 7.642, accent: "blue" },
+  { label: "20:57\\nДЕВУШКИ С МАКАРОВЫМ\\nПятый сезон\\nСезон 5 Серия 1", share: 7.067, accent: "yellow" }
+];
+
+function openEnvironment() {
+  show('environment');
+  renderEnvironmentChart();
+}
+
+function renderEnvironmentChart() {
+  const chart = $('environmentChart');
+  if (!chart) return;
+
+  const w = 640;
+  const h = 300;
+  const left = 44;
+  const right = 18;
+  const top = 24;
+  const bottom = 88;
+  const plotW = w - left - right;
+  const plotH = h - top - bottom;
+  const max = 10;
+  const baseY = top + plotH;
+  const dayAverage = 5.8;
+  const avgY = baseY - dayAverage / 12 * plotH;
+
+  const barW = 58;
+  const step = plotW / environmentData.length;
+  const colors = {
+    
+    blue: "url(#envBlue)",
+    yellow: "url(#envYellow)"
+  };
+
+  const bars = environmentData.map((d, i) => {
+    const x = left + step * i + (step - barW) / 2;
+    const barH = d.share / max * plotH;
+    const y = baseY - barH;
+    const value = String(d.share.toFixed(3)).replace('.', ',');
+    const labelLines = d.label.split('\\n').map((line, j) =>
+      `<tspan x="${x + barW / 2}" dy="${j === 0 ? 0 : 14}">${line}</tspan>`
+    ).join('');
+    return `
+      <text x="${x + barW / 2}" y="${y - 10}" text-anchor="middle" class="envValue">${value}</text>
+      <rect x="${x}" y="${y}" width="${barW}" height="${barH}" rx="6" fill="${colors[d.accent]}"></rect>
+      <text x="${x + barW / 2}" y="${baseY + 22}" text-anchor="middle" class="envLabel">${labelLines}</text>
+    `;
+  }).join('');
+
+  chart.innerHTML = `
+    <svg class="environmentSvg" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="envBlue" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#12B8FF"/><stop offset="100%" stop-color="#0077D9"/>
+        </linearGradient>
+        <linearGradient id="envRed" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FF667A"/><stop offset="100%" stop-color="#E5304E"/>
+        </linearGradient>
+        <linearGradient id="envYellow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFD987"/><stop offset="100%" stop-color="#E9A84E"/>
+        </linearGradient>
+      </defs>
+
+      <text x="${left}" y="14" class="envAxisTitle">Доля, %</text>
+      ${[0,4,8,12].map(t => {
+        const y = baseY - t / 12 * plotH;
+        return `<line x1="${left}" y1="${y}" x2="${w - right}" y2="${y}" class="envGrid"></line>
+                <text x="10" y="${y + 4}" class="envTick">${t}</text>`;
+      }).join('')}
+      <line x1="${left}" y1="${baseY}" x2="${w - right}" y2="${baseY}" class="envAxis"></line>
+      <line x1="${left}" y1="${top}" x2="${left}" y2="${baseY}" class="envAxis"></line>
+      ${bars}
+      <line x1="${left}" y1="${avgY}" x2="${w - right}" y2="${avgY}" class="envAverageLine"></line>
+      <rect x="${w - right - 104}" y="${avgY - 23}" width="100" height="36" rx="6" class="envAverageBox"></rect>
+      <text x="${w - right - 98}" y="${avgY - 8}" class="envAverageLabel"><tspan x="${w - right - 98}">Среднее</tspan><tspan x="${w - right - 98}" dy="14">за день 5,8</tspan></text>
+    </svg>
+  `;
 }
 
 document.addEventListener('DOMContentLoaded', () => {

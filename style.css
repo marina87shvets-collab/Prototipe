@@ -226,3 +226,152 @@ footer span{cursor:pointer;}
   height:250px !important;
   display:block;
 }
+
+/* v32 environment drillthrough */
+.heatCell { cursor: default; }
+.heatCell.environmentTrigger {
+  cursor: pointer;
+  outline: 2px solid rgba(255,216,74,.95);
+  outline-offset: -2px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.25);
+}
+.heatCell.environmentTrigger:hover {
+  filter: brightness(1.18);
+}
+#environmentChart {
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+}
+.environmentSvg {
+  width: 100%;
+  height: 360px;
+  display: block;
+}
+.envAxis,
+.envGrid {
+  stroke: rgba(255,255,255,.18);
+  stroke-width: 1;
+}
+.envGrid {
+  stroke-dasharray: 2 4;
+}
+.envValue {
+  fill: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+.envLabel {
+  fill: #E8EAF6;
+  font-size: 11px;
+}
+.envTick,
+.envAxisTitle {
+  fill: #A7A9C2;
+  font-size: 11px;
+}
+
+
+/* v34: environment chart visual polish */
+#environmentChart {
+  height: 300px !important;
+  overflow: hidden;
+}
+
+.environmentSvg {
+  height: 300px !important;
+}
+
+.envValue {
+  fill: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  paint-order: stroke;
+  stroke: rgba(0,0,0,.45);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+}
+
+.envLabel {
+  fill: #FFFFFF !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1.2;
+  paint-order: stroke;
+  stroke: rgba(0,0,0,.55);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+}
+
+.envTick,
+.envAxisTitle {
+  fill: #E8EAF6 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+.envAxis,
+.envGrid {
+  stroke: rgba(255,255,255,.24) !important;
+}
+
+
+
+/* v35: environment chart color and average line fix */
+.envAverageLine{
+  stroke:#FFFFFF;
+  stroke-width:1;
+  stroke-dasharray:4 5;
+  opacity:.75;
+}
+.envAverageLabel{
+  fill:#FFFFFF;
+  font-size:12px;
+  font-weight:700;
+  paint-order:stroke;
+  stroke:rgba(0,0,0,.55);
+  stroke-width:2px;
+  stroke-linejoin:round;
+}
+
+
+/* v36: environment chart final polish */
+.envAverageLine{
+  stroke:#FFD987 !important;
+  stroke-width:1.2 !important;
+  stroke-dasharray:5 5 !important;
+  opacity:.95 !important;
+}
+.envAverageBox{
+  fill:rgba(12,8,50,.88);
+  stroke:#FFD987;
+  stroke-width:1;
+}
+.envAverageLabel{
+  fill:#FFD987 !important;
+  font-size:11px !important;
+  font-weight:800 !important;
+  paint-order:stroke;
+  stroke:rgba(0,0,0,.55);
+  stroke-width:2px;
+  stroke-linejoin:round;
+}
+.envLabel {
+  fill:#FFFFFF !important;
+  font-size:11.5px !important;
+  font-weight:750 !important;
+  letter-spacing:-.15px;
+  paint-order:stroke;
+  stroke:rgba(0,0,0,.62);
+  stroke-width:2px;
+  stroke-linejoin:round;
+}
+.envValue {
+  fill:#FFFFFF !important;
+  font-size:15px !important;
+  font-weight:850 !important;
+  paint-order:stroke;
+  stroke:rgba(0,0,0,.55);
+  stroke-width:2px;
+  stroke-linejoin:round;
+}
