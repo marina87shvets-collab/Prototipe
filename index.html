@@ -32,8 +32,11 @@
   </div>
 
   <div class="card" id="timelineCard">
-    <h2>Динамика доли сезонов</h2>
-    <select id="timelineModeSelect" onchange="renderSeasonTimeline()"><option value="dates">По датам</option><option value="weekday">По дням недели</option></select><br><br><select id="timelineSeasonSelect" onchange="renderSeasonTimeline()">
+    <div class="timelineTitleRow">
+      <h2>Динамика доли сезонов</h2>
+      <select id="timelineModeSelect" onchange="renderSeasonTimeline()"><option value="dates">По датам</option><option value="weekday">По дням недели</option></select>
+    </div>
+    <select id="timelineSeasonSelect" onchange="renderSeasonTimeline()">
       <option value="1">Сезон 1</option>
       <option value="2">Сезон 2</option>
       <option value="3">Сезон 3</option>
@@ -52,12 +55,8 @@
 </section>
 
 <section id="environment" class="screen">
-  <div class="head"><button onclick="show('analytics')" class="back">‹</button><h1>Окружение</h1><button onclick="show('analytics')" class="back">⌯</button></div>
-  <div class="card">
-    <h2>Окружение</h2>
-    <p class="muted">Сезон 5, серия 1</p>
-    <div id="environmentChart"></div>
-  </div>
+  <div class="head"><button onclick="show('analytics')" class="back">‹</button><h1>EPG окружение</h1><button onclick="show('analytics')" class="back">⌯</button></div>
+  <div class="epgCard epgCardFull"><div id="environmentChart"></div></div>
   <footer><span onclick="show('project')">▣<br>Проект</span><span class="on" onclick="show('analytics')">⚖<br>Сравнение</span><span onclick="show('search')">⌕<br>Поиск</span></footer>
 </section>
 

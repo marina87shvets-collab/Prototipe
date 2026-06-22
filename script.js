@@ -102,21 +102,19 @@ function renderAnalytics() {
 function renderCompareChart() {
   const el = $('compare');
   if (!el) return;
-  const colors = [
-    'linear-gradient(#00E5FF,#079dbd)',
-    'linear-gradient(#4D55FF,#2726D8)',
-    'linear-gradient(#A13CFF,#6A15DB)',
-    'linear-gradient(#00B4FF,#0058D8)',
-    'linear-gradient(#D34CFF,#7D1BE0)'
-  ];
   const maxCompare = Math.max(...current.compare);
-  el.innerHTML = current.compare.map((v, i) => `
-    <div class="big">
-      <b>${String(v).replace('.', ',')}%</b>
-      <div style="height:${v / maxCompare * 112}px;background:${colors[i]}"></div>
-      <span>Сезон ${i + 1}</span>
-    </div>
-  `).join('');
+  const blue = 'linear-gradient(180deg,#19C8FF 0%,#0096E6 48%,#0069C9 100%)';
+  const gold = 'linear-gradient(180deg,#FFE1A0 0%,#F6C65F 42%,#B87317 100%)';
+  el.innerHTML = current.compare.map((v, i) => {
+    const isMax = v === maxCompare;
+    return `
+      <div class="big ${isMax ? 'maxSeason' : ''}">
+        <b>${String(v).replace('.', ',')}%</b>
+        <div class="compareBar" style="height:${v / maxCompare * 112}px;background:${isMax ? gold : blue}"></div>
+        <span>Сезон ${i + 1}</span>
+      </div>
+    `;
+  }).join('');
 }
 
 function renderSeasonTimeline() {
@@ -170,7 +168,8 @@ function renderSeasonTimeline() {
   const min = Math.floor(Math.min(...shares) - 1);
   const max = Math.ceil(Math.max(...shares) + 1);
   const range = max - min || 1;
-  const avg = shares.reduce((a, b) => a + b, 0) / shares.length;
+  const seasonAverage = {1:14.6,2:11.0,3:8.7,4:10.5,5:7.8};
+  const avg = seasonAverage[season] || (shares.reduce((a,b)=>a+b,0)/shares.length);
 
   const x = i => left + (data.length === 1 ? 0 : i * (plotW / (data.length - 1)));
   const y = v => top + (max - v) * (plotH / range);
@@ -253,84 +252,139 @@ function renderHeatmap() {
     rows.map(r => `<tr>${r.map((v, i) => cell(v, i, r[0])).join('')}</tr>`).join('');
 }
 
-const environmentData = [
-  { label: "19:34\nПОЛЯРНЫЙ 4\nСезон 4 Серия 17", share: 8.382, accent: "blue" },
-  { label: "20:02\\nКупцы и дети\\nСезон 1 Серия 1", share: 8.822, accent: "blue" },
-  { label: "20:24\\nКупцы и дети\\nСезон 1 Серия 2", share: 7.642, accent: "blue" },
-  { label: "20:57\\nДЕВУШКИ С МАКАРОВЫМ\\nПятый сезон\\nСезон 5 Серия 1", share: 7.067, accent: "yellow" }
-];
+
+const environmentPrograms = {
+  tnt: [
+    { start: "19:34:34", end: "20:02:09", title: "Полярный 4", share: 8.38, highlight: false },
+    { start: "20:02:09", end: "20:24:57", title: "Купцы и дети", share: 8.82, highlight: false },
+    { start: "20:24:57", end: "20:57:28", title: "Купцы и дети", share: 7.64, highlight: false },
+    { start: "20:57:28", end: "21:30:00", title: "Девушки с Макаровым", share: 7.07, highlight: true }
+  ],
+  ctc: [
+    { start: "19:21:55", end: "20:58:29", title: "Уральские пельмени", share: 7.17, highlight: false },
+    { start: "20:58:29", end: "22:00:00", title: "Робин Гуд или младенец на 30 000 000$", share: 8.58, highlight: false }
+  ]
+};
 
 function openEnvironment() {
   show('environment');
   renderEnvironmentChart();
 }
 
+function timeToMinutes(t) {
+  const parts = t.split(':').map(Number);
+  return parts[0] * 60 + parts[1] + (parts[2] || 0) / 60;
+}
+
+function formatShare(v) {
+  return String(v.toFixed(2)).replace('.', ',') + '%';
+}
+
 function renderEnvironmentChart() {
   const chart = $('environmentChart');
   if (!chart) return;
 
-  const w = 640;
-  const h = 300;
-  const left = 44;
-  const right = 18;
-  const top = 24;
-  const bottom = 88;
-  const plotW = w - left - right;
+  const startMin = timeToMinutes("19:00:00");
+  const endMin = timeToMinutes("22:00:00");
+  const totalMin = endMin - startMin;
+
+  const w = 360;
+  const h = 640;
+  const left = 32;
+  const right = 8;
+  const top = 88;
+  const bottom = 20;
   const plotH = h - top - bottom;
-  const max = 10;
-  const baseY = top + plotH;
-  const dayAverage = 5.8;
-  const avgY = baseY - dayAverage / 12 * plotH;
+  const gap = 8;
+  const colW = (w - left - right - gap) / 2;
+  const tntX = left;
+  const ctcX = left + colW + gap;
+  const maxShare = 10;
 
-  const barW = 58;
-  const step = plotW / environmentData.length;
-  const colors = {
-    
-    blue: "url(#envBlue)",
-    yellow: "url(#envYellow)"
-  };
+  const y = t => top + (timeToMinutes(t) - startMin) * (plotH / totalMin);
 
-  const bars = environmentData.map((d, i) => {
-    const x = left + step * i + (step - barW) / 2;
-    const barH = d.share / max * plotH;
-    const y = baseY - barH;
-    const value = String(d.share.toFixed(3)).replace('.', ',');
-    const labelLines = d.label.split('\\n').map((line, j) =>
-      `<tspan x="${x + barW / 2}" dy="${j === 0 ? 0 : 14}">${line}</tspan>`
-    ).join('');
+  const timeTicks = ["19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"];
+  const tickLines = timeTicks.map(t => {
+    const yy = y(t + ":00");
     return `
-      <text x="${x + barW / 2}" y="${y - 10}" text-anchor="middle" class="envValue">${value}</text>
-      <rect x="${x}" y="${y}" width="${barW}" height="${barH}" rx="6" fill="${colors[d.accent]}"></rect>
-      <text x="${x + barW / 2}" y="${baseY + 22}" text-anchor="middle" class="envLabel">${labelLines}</text>
+      <line x1="${left - 6}" y1="${yy}" x2="${w - right}" y2="${yy}" class="epgGrid"></line>
+      <text x="2" y="${yy + 5}" class="epgTime">${t}</text>
     `;
   }).join('');
 
+  function wrapTitle(title, maxChars = 18) {
+    const words = title.split(' ');
+    const lines = [];
+    let line = '';
+    words.forEach(word => {
+      const next = line ? line + ' ' + word : word;
+      if (next.length > maxChars && line) {
+        lines.push(line);
+        line = word;
+      } else {
+        line = next;
+      }
+    });
+    if (line) lines.push(line);
+    return lines.slice(0, 3);
+  }
+
+  function programBlock(p, x) {
+    const yy = y(p.start);
+    const hh = Math.max(26, (timeToMinutes(p.end) - timeToMinutes(p.start)) * (plotH / totalMin));
+    const isMakarov = p.highlight;
+    const fill = isMakarov ? "url(#epgGold)" : "url(#epgBlue)";
+    const stroke = isMakarov ? "#F6C65F" : "#00AEEF";
+    const barColor = isMakarov ? "#F6C65F" : "#13B9FF";
+    const textColor = isMakarov ? "#FFE3A3" : "#FFFFFF";
+
+    const chartMin = 5.0;
+    const chartMax = 9.0;
+    const normalized = Math.max(0.04, Math.min(1, (p.share - chartMin) / (chartMax - chartMin)));
+    const maxBarW = colW - 58;
+    const shareW = Math.max(20, normalized * maxBarW);
+
+    const titleLines = wrapTitle(p.title, 18);
+    const titleSvg = titleLines.map((line, i) =>
+      `<tspan x="${x + 10}" dy="${i === 0 ? 0 : 13}">${line}</tspan>`
+    ).join('');
+
+    const titleY = yy + 43;
+    const barY = Math.min(yy + hh - 22, titleY + 10 + titleLines.length * 13);
+    const value = formatShare(p.share);
+
+    return `
+      <g class="epgProgram">
+        <rect x="${x}" y="${yy}" width="${colW}" height="${hh}" rx="8" fill="${fill}" stroke="${stroke}" stroke-width="1.2"></rect>
+        <text x="${x + 10}" y="${yy + 20}" class="epgStart">${p.start}</text>
+        <text x="${x + 10}" y="${titleY}" class="epgTitle" fill="${textColor}">${titleSvg}</text>
+        <rect x="${x + 10}" y="${barY}" width="${maxBarW}" height="11" rx="3" class="epgBarBg"></rect>
+        <rect x="${x + 10}" y="${barY}" width="${shareW}" height="11" rx="3" fill="${barColor}"></rect>
+        <text x="${x + colW - 8}" y="${barY + 10}" text-anchor="end" class="${isMakarov ? 'epgShareGold' : 'epgShare'}">${value}</text>
+      </g>
+    `;
+  }
+
   chart.innerHTML = `
-    <svg class="environmentSvg" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+    <svg class="epgSvg" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
       <defs>
-        <linearGradient id="envBlue" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#12B8FF"/><stop offset="100%" stop-color="#0077D9"/>
+        <linearGradient id="epgBlue" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(0,102,190,.88)"/>
+          <stop offset="100%" stop-color="rgba(0,46,102,.90)"/>
         </linearGradient>
-        <linearGradient id="envRed" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#FF667A"/><stop offset="100%" stop-color="#E5304E"/>
-        </linearGradient>
-        <linearGradient id="envYellow" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#FFD987"/><stop offset="100%" stop-color="#E9A84E"/>
+        <linearGradient id="epgGold" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(246,198,95,.86)"/>
+          <stop offset="100%" stop-color="rgba(142,93,0,.88)"/>
         </linearGradient>
       </defs>
-
-      <text x="${left}" y="14" class="envAxisTitle">Доля, %</text>
-      ${[0,4,8,12].map(t => {
-        const y = baseY - t / 12 * plotH;
-        return `<line x1="${left}" y1="${y}" x2="${w - right}" y2="${y}" class="envGrid"></line>
-                <text x="10" y="${y + 4}" class="envTick">${t}</text>`;
-      }).join('')}
-      <line x1="${left}" y1="${baseY}" x2="${w - right}" y2="${baseY}" class="envAxis"></line>
-      <line x1="${left}" y1="${top}" x2="${left}" y2="${baseY}" class="envAxis"></line>
-      ${bars}
-      <line x1="${left}" y1="${avgY}" x2="${w - right}" y2="${avgY}" class="envAverageLine"></line>
-      <rect x="${w - right - 104}" y="${avgY - 23}" width="100" height="36" rx="6" class="envAverageBox"></rect>
-      <text x="${w - right - 98}" y="${avgY - 8}" class="envAverageLabel"><tspan x="${w - right - 98}">Среднее</tspan><tspan x="${w - right - 98}" dy="14">за день 5,8</tspan></text>
+      <rect x="1" y="1" width="${w - 2}" height="${h - 2}" rx="16" class="epgOuter"></rect>
+      <image href="tnt_logo.png" x="${tntX + colW/2 - 27}" y="10" width="54" height="30" preserveAspectRatio="none"></image>\n      <text x="${tntX + colW/2}" y="56" text-anchor="middle" class="epgChannelTitle">среднее за день 5,90</text>
+      <image href="ctc_logo.png" x="${ctcX + colW/2 - 27}" y="10" width="54" height="30" preserveAspectRatio="none"></image>\n      <text x="${ctcX + colW/2}" y="56" text-anchor="middle" class="epgChannelTitle">среднее за день 7,80</text>
+      ${tickLines}
+      <line x1="${left - 6}" y1="${top}" x2="${left - 6}" y2="${h - bottom}" class="epgAxis"></line>
+      <line x1="${ctcX - gap / 2}" y1="${top - 8}" x2="${ctcX - gap / 2}" y2="${h - bottom}" class="epgDivider"></line>
+      ${environmentPrograms.tnt.map(p => programBlock(p, tntX)).join('')}
+      ${environmentPrograms.ctc.map(p => programBlock(p, ctcX)).join('')}
     </svg>
   `;
 }
