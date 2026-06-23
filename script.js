@@ -51,7 +51,7 @@ function renderProject() {
   if ($('seasons')) $('seasons').innerHTML = current.seasons.map(s => `
     <div class="season">
       <div><b>${s[0]}</b><br><span class="muted">${s[1]}</span></div>
-      <div><span class="muted">Период премьеры</span><br>${s[2]}<br><span class="muted">Средняя доля: ${s[3]}%</span></div>
+      <div><span class="muted">Период премьеры</span><br>${s[2]}<br><span class="seasonAvgLabel">Средняя доля:</span> <span class="seasonAvgValue">${s[3]}%</span></div>
     </div>
   `).join('');
 }
@@ -73,7 +73,18 @@ function toggleCast() {
 
 function analytics() {
   show('analytics');
+  reorderAnalyticsCards();
   renderAnalytics();
+}
+
+function reorderAnalyticsCards() {
+  const analyticsScreen = document.getElementById('analytics');
+  const compareCard = document.getElementById('compareCard');
+  const heatCard = document.getElementById('heatCard');
+  const timelineCard = document.getElementById('timelineCard');
+  if (!analyticsScreen || !compareCard || !heatCard || !timelineCard) return;
+  compareCard.insertAdjacentElement('afterend', heatCard);
+  heatCard.insertAdjacentElement('afterend', timelineCard);
 }
 
 function heatColor(value, minValue, maxValue) {
@@ -124,6 +135,7 @@ function renderSeasonTimeline() {
   const season = selector.value || '1';
  const mode=(document.getElementById('timelineModeSelect')||{value:'dates'}).value;
  if(mode==='weekday'){
+   document.querySelectorAll('.timelineFakeScroll').forEach(el => el.remove());
    const d=weekdayData[season]||[];
    const max=Math.max(...d.map(x=>x.share));
    container.style.overflowX='hidden';
@@ -149,6 +161,7 @@ function renderSeasonTimeline() {
    </svg>`;
    return;
  }
+ document.querySelectorAll('.timelineFakeScroll').forEach(el => el.remove());
  container.style.overflowX='auto';
   const data = seasonTimelineData[season] || [];
   if (!data.length) {
@@ -206,6 +219,26 @@ function renderSeasonTimeline() {
       ${dateLabels}
     </svg>
   `;
+
+  const fake = document.createElement('div');
+  fake.className = 'timelineFakeScroll';
+  fake.innerHTML = '<div class="timelineFakeThumb"></div>';
+  container.insertAdjacentElement('afterend', fake);
+
+  const oldFakeBars = [...document.querySelectorAll('.timelineFakeScroll')];
+  oldFakeBars.slice(0, -1).forEach(el => el.remove());
+
+  const thumb = fake.querySelector('.timelineFakeThumb');
+  const updateThumb = () => {
+    const ratio = container.clientWidth / Math.max(container.scrollWidth, 1);
+    const thumbW = Math.max(54, fake.clientWidth * ratio);
+    const maxLeft = Math.max(0, fake.clientWidth - thumbW);
+    const leftPos = maxLeft * (container.scrollLeft / Math.max(container.scrollWidth - container.clientWidth, 1));
+    thumb.style.width = thumbW + 'px';
+    thumb.style.transform = `translateX(${leftPos}px)`;
+  };
+  container.addEventListener('scroll', updateThumb);
+  requestAnimationFrame(updateThumb);
 }
 
 function renderHeatmap() {
@@ -400,4 +433,5 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   renderResults();
   renderProject();
+  reorderAnalyticsCards();
 });

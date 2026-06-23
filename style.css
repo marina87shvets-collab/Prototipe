@@ -778,3 +778,50 @@ footer span{cursor:pointer;}
 #timelineSeasonSelect {
   margin-top:4px;
 }
+
+
+/* v49: season average typography */
+.seasonAvgLabel{
+  color:#A7A9C2;
+  font-size:10px;
+  font-weight:500;
+}
+.seasonAvgValue{
+  color:#FFFFFF;
+  font-size:14px;
+  font-weight:850;
+}
+
+/* v49: iPhone-visible custom horizontal scroll indicator for date timeline */
+#seasonTimelineChart{
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:auto;
+  scrollbar-color:#BFC3D9 rgba(255,255,255,.12);
+}
+#seasonTimelineChart::-webkit-scrollbar{
+  height:10px;
+}
+#seasonTimelineChart::-webkit-scrollbar-track{
+  background:rgba(255,255,255,.12);
+  border-radius:999px;
+}
+#seasonTimelineChart::-webkit-scrollbar-thumb{
+  background:#BFC3D9;
+  border-radius:999px;
+}
+.timelineFakeScroll{
+  width:100%;
+  height:10px;
+  margin:4px 0 8px;
+  background:rgba(255,255,255,.15);
+  border-radius:999px;
+  overflow:hidden;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
+}
+.timelineFakeThumb{
+  height:100%;
+  width:64px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#D9DCEB,#9FA5BA);
+  transition:transform .08s linear;
+}

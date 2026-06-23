@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ТНТ — прототип</title>
-<link rel="stylesheet" href="style.css?v=48">
+<link rel="stylesheet" href="style.css?v=51">
 </head>
 <body>
 <main class="phone">
@@ -26,7 +26,7 @@
 <section id="analytics" class="screen">
   <div class="head"><button onclick="show('project')" class="back">‹</button><h1>Сравнение</h1><button onclick="show('project')" class="back">⌯</button></div>
 
-  <div class="card">
+  <div class="card" id="compareCard">
     <h2>Сравнение сезонов по средней доле (%)</h2>
     <div id="compare" class="compare"></div>
   </div>
@@ -46,7 +46,7 @@
     <div id="seasonTimelineChart"></div>
   </div>
 
-  <div class="card">
+  <div class="card" id="heatCard">
     <h2>Тепловая карта по выпускам</h2>
     <table id="heat"></table>
   </div>
@@ -61,5 +61,5 @@
 </section>
 
 </main>
-<script src="script.js?v=48"></script>
+<script src="script.js?v=51"></script>
 </body></html>
