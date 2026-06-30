@@ -3,12 +3,28 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ТНТ — прототип</title>
-<link rel="stylesheet" href="style.css?v=72">
+<link rel="stylesheet" href="style.css?v=76">
 </head>
 <body>
 <main class="phone">
-<section id="search" class="screen active">
-  <div class="top"><div class="hamb">☰</div><input id="q" placeholder="Поиск по проектам"></div>
+<section id="reportHub" class="screen active">
+  <div class="reportHubHero">
+    <div class="reportHubLogo">THT</div>
+    <h1>Отчеты</h1>
+    <p>Выберите аналитический отчет для просмотра.</p>
+  </div>
+  <div class="card reportChoiceCard" onclick="show('search')">
+    <div class="reportChoiceTop">
+      <span class="reportTypeBadge">Сериалы</span>
+      <span class="reportArrow">›</span>
+    </div>
+    <h2>Отчет по сериалам</h2>
+    <p>Карточка проекта, общая информация, сезоны и выпуски, динамика доли, сравнение сезонов, конкурентное окружение и детализация прав по договорам, территориям, ограничениям и сублицензированию.</p>
+  </div>
+</section>
+
+<section id="search" class="screen">
+  <div class="top"><button onclick="show('reportHub')" class="back">‹</button><input id="q" placeholder="Поиск по проектам"></div>
   <h1>Проекты</h1><p class="muted">Введите название или выберите проект</p>
   <div id="results"></div>
 </section>
@@ -100,5 +116,5 @@
 </section>
 
 </main>
-<script src="script.js?v=72"></script>
+<script src="script.js?v=76"></script>
 </body></html>

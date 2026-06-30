@@ -2326,3 +2326,203 @@ footer span{cursor:pointer;}
 .v72LimitationsLast{
   margin-top:12px;
 }
+
+
+/* v73 expandable detailed limitations and country list */
+.territoryToggleBtn{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  text-align:left;
+  color:#FFFFFF;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:12px;
+  padding:7px 9px;
+  font-size:9px;
+  line-height:1.22;
+}
+.territoryToggleBtn span{
+  color:#FFFFFF;
+  font-weight:500;
+}
+.territoryToggleBtn b{
+  color:#FFFFFF;
+  font-size:8px;
+  font-weight:600;
+  white-space:nowrap;
+  opacity:.72;
+}
+.territoryFullText{
+  margin-top:6px;
+  padding:8px 9px;
+  border-radius:12px;
+  color:#FFFFFF;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.12);
+  font-size:9px;
+  line-height:1.32;
+}
+.limitationToggleBtn{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:0;
+  margin:0 0 6px;
+  background:transparent;
+  border:0;
+  color:#FFFFFF;
+  text-align:left;
+}
+.limitationToggleBtn span{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  color:#FF6670;
+  font-weight:700;
+}
+.limitationToggleBtn b{
+  font-size:8px;
+  color:#FF8A92;
+  font-weight:650;
+  white-space:nowrap;
+}
+.limitationDetailedText{
+  margin-top:8px;
+  padding:9px 10px;
+  border-radius:12px;
+  color:#FFFFFF;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.14);
+  font-size:9px;
+  line-height:1.36;
+  max-height:260px;
+  overflow:auto;
+}
+
+
+/* v75 report hub and detail sublicensing */
+.reportHubHero{
+  padding:22px 18px 10px;
+}
+.reportHubLogo{
+  width:42px;
+  height:42px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#FFB800,#FF3D77);
+  color:#101224;
+  font-weight:900;
+  letter-spacing:-.08em;
+  margin-bottom:14px;
+}
+.reportHubHero h1{
+  margin:0;
+  font-size:28px;
+  line-height:1;
+}
+.reportHubHero p{
+  margin:8px 0 0;
+  color:#AAB2D8;
+  font-size:13px;
+}
+.reportChoiceCard{
+  margin:12px 14px;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,.12);
+}
+.reportChoiceTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:10px;
+}
+.reportTypeBadge{
+  display:inline-flex;
+  padding:5px 9px;
+  border-radius:999px;
+  background:rgba(255,184,0,.16);
+  color:#FFD166;
+  font-size:10px;
+  font-weight:700;
+}
+.reportArrow{
+  color:#FFFFFF;
+  font-size:28px;
+  line-height:1;
+  opacity:.75;
+}
+.reportChoiceCard h2{
+  margin:0 0 8px;
+}
+.reportChoiceCard p{
+  margin:0;
+  color:#CDD4F6;
+  font-size:11px;
+  line-height:1.45;
+}
+.detailSubRow{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  margin:0 0 8px;
+  padding:7px 9px;
+  border-radius:12px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.10);
+}
+.detailSubRow span{
+  color:#AEB8DD;
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+.detailSubRow b{
+  color:#FFFFFF;
+  font-size:9px;
+  line-height:1.25;
+  text-align:right;
+  font-weight:650;
+}
+
+
+/* v76 compact detail info blocks */
+.v76MainGrid{
+  margin-bottom:8px;
+}
+.detailCompactInfoRow{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin:0 0 12px;
+}
+.detailCompactInfoRow > div{
+  min-height:auto;
+  padding:7px 8px;
+  border-radius:12px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.10);
+}
+.detailCompactInfoRow span{
+  display:block;
+  margin-bottom:3px;
+  color:#AEB8DD;
+  font-size:7.4px;
+  line-height:1.05;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+.detailCompactInfoRow b{
+  display:block;
+  color:#FFFFFF;
+  font-size:9px;
+  line-height:1.18;
+  font-weight:650;
+}

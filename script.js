@@ -2341,7 +2341,7 @@ function renderRightsCoverageMap(data) {
 
 
 /* v70 rights cleanup final */
-const rightsRowsV70 = [{"id": "owner", "name": "Комеди Клаб продакшн ООО", "schemeName": "Comedy Club Production", "vho": "Нет", "period": "11.12.2024 — 10.12.2094", "contract": "Д475897", "territory": "Весь мир", "rights": [{"label": "ALL", "status": "exclusive"}], "platform": "ГПМ РТВ", "role": "Правообладатель", "limitation": "", "exclusion": false, "episodes": 20}, {"id": "tnt", "name": "ТНТ-Телесеть АО", "schemeName": "ТНТ", "vho": "Да", "period": "01.01.2025 — 30.01.2028", "contract": "Дк214323", "territory": "Россия", "rights": [{"label": "Catch Up", "status": "exclusive"}, {"label": "Simulcast", "status": "exclusive"}, {"label": "ТВ free", "status": "nonexclusive"}], "platform": "ТНТ", "role": "Получатель прав от ГПМ РТВ", "limitation": "", "exclusion": true, "episodes": 20, "exclusions": ["Исключая: Лицензионная музыка / фонограммы для анонсов"]}, {"id": "tnt", "name": "ТНТ-Телесеть АО", "schemeName": "ТНТ", "vho": "Да", "period": "01.01.2025 — 30.01.2028", "contract": "Дк214323", "territory": "Весь мир, исключая Россию", "rights": [{"label": "ВОСПРОИЗВЕДЕНИЕ", "status": "nonexclusive"}, {"label": "Catch Up", "status": "nonexclusive"}, {"label": "Simulcast", "status": "nonexclusive"}, {"label": "ИСПОЛЬЗОВАНИЕ ЭЛЕМЕНТОВ", "status": "nonexclusive"}], "platform": "ТНТ", "role": "Получатель прав от ГПМ РТВ", "limitation": "", "exclusion": true, "episodes": 20, "exclusions": ["Исключая: Лицензионная музыка / фонограммы для анонсов"]}, {"id": "premier", "name": "Премьер ООО", "schemeName": "Премьер", "vho": "Да", "period": "20.01.2025 — 19.01.2026", "contract": "Дк217821", "territory": "СНГ+ и Россия", "rights": [{"label": "EST", "status": "exclusive"}, {"label": "FVOD", "status": "exclusive"}, {"label": "SVOD", "status": "exclusive"}, {"label": "TVOD", "status": "exclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "PREMIER", "role": "Получатель цифровых прав от ГПМ РТВ", "limitation": "", "exclusion": false, "episodes": 20}, {"id": "premier", "name": "Премьер ООО", "schemeName": "Премьер", "vho": "Да", "period": "20.01.2025 — 19.01.2026", "contract": "Дк217821", "territory": "Весь мир, исключая СНГ+ и Россию", "rights": [{"label": "EST", "status": "nonexclusive"}, {"label": "FVOD", "status": "nonexclusive"}, {"label": "SVOD", "status": "nonexclusive"}, {"label": "TVOD", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "PREMIER", "role": "Получатель цифровых прав от ГПМ РТВ", "limitation": "", "exclusion": true, "episodes": 20}, {"id": "premier", "name": "Премьер ООО", "schemeName": "Премьер", "vho": "Да", "period": "20.01.2026 — 19.01.2029", "contract": "Дк217821", "territory": "СНГ+ и Россия", "rights": [{"label": "AVOD", "status": "exclusive"}, {"label": "EST", "status": "exclusive"}, {"label": "FVOD", "status": "exclusive"}, {"label": "SVOD", "status": "exclusive"}, {"label": "TVOD", "status": "exclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "PREMIER", "role": "Получатель цифровых прав от ГПМ РТВ", "limitation": "", "exclusion": false, "episodes": 20}, {"id": "premier", "name": "Премьер ООО", "schemeName": "Премьер", "vho": "Да", "period": "20.01.2026 — 19.01.2031", "contract": "Дк217821", "territory": "Весь мир, исключая СНГ+ и Россию", "rights": [{"label": "AVOD", "status": "nonexclusive"}, {"label": "EST", "status": "nonexclusive"}, {"label": "FVOD", "status": "nonexclusive"}, {"label": "SVOD", "status": "nonexclusive"}, {"label": "TVOD", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "PREMIER", "role": "Получатель цифровых прав от ГПМ РТВ", "limitation": "", "exclusion": true, "episodes": 20}, {"id": "premier", "name": "Премьер ООО", "schemeName": "Премьер", "vho": "Да", "period": "20.01.2029 — 19.01.2031", "contract": "Дк217821", "territory": "СНГ+ и Россия", "rights": [{"label": "AVOD", "status": "nonexclusive"}, {"label": "EST", "status": "nonexclusive"}, {"label": "FVOD", "status": "nonexclusive"}, {"label": "SVOD", "status": "nonexclusive"}, {"label": "TVOD", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "PREMIER", "role": "Получатель цифровых прав от ГПМ РТВ", "limitation": "", "exclusion": false, "episodes": 20}, {"id": "druzhba", "name": "Дружба Мьюзик ООО", "schemeName": "Дружба Мьюзик", "vho": "Да", "period": "20.01.2025 — 29.01.2028", "contract": "Дк218062", "territory": "Весь мир, исключая Украину и Россию", "rights": [{"label": "Catch Up", "status": "nonexclusive"}, {"label": "Simulcast", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}, {"label": "ТВ free", "status": "nonexclusive"}, {"label": "ТВ pay", "status": "nonexclusive"}], "platform": "INT_TNT4 · ТНТint", "role": "Получатель международных прав от ГПМ РТВ", "limitation": "", "exclusion": true, "episodes": 13}, {"id": "druzhba", "name": "Дружба Мьюзик ООО", "schemeName": "Дружба Мьюзик", "vho": "Да", "period": "03.02.2025 — 05.02.2028", "contract": "Дк218934", "territory": "Весь мир, исключая Украину и Россию", "rights": [{"label": "Catch Up", "status": "nonexclusive"}, {"label": "Simulcast", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}, {"label": "ТВ free", "status": "nonexclusive"}, {"label": "ТВ pay", "status": "nonexclusive"}], "platform": "INT_TNT4 · ТНТint", "role": "Получатель международных прав от ГПМ РТВ", "limitation": "", "exclusion": true, "episodes": 7}, {"id": "kinopoisk", "name": "Кинопоиск ООО", "schemeName": "Кинопоиск", "vho": "Нет", "period": "20.01.2025 — 20.01.2029", "contract": "Дк219154", "territory": "СНГ+ и Россия", "rights": [{"label": "AVOD", "status": "exclusive"}, {"label": "EST", "status": "exclusive"}, {"label": "FVOD", "status": "exclusive"}, {"label": "SVOD", "status": "exclusive"}, {"label": "TVOD", "status": "exclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "Кинопоиск", "role": "Получатель прав через Премьер", "limitation": "ХОЛДБЭК по договору с Кинопоиском (рег. Дк219154)", "exclusion": false, "episodes": 20}, {"id": "kinopoisk", "name": "Кинопоиск ООО", "schemeName": "Кинопоиск", "vho": "Нет", "period": "20.01.2025 — 20.01.2031", "contract": "Дк219154", "territory": "Весь мир, исключая СНГ+ и Россию", "rights": [{"label": "AVOD", "status": "nonexclusive"}, {"label": "EST", "status": "nonexclusive"}, {"label": "FVOD", "status": "nonexclusive"}, {"label": "SVOD", "status": "nonexclusive"}, {"label": "TVOD", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "Кинопоиск", "role": "Получатель прав через Премьер", "limitation": "ХОЛДБЭК по договору с Кинопоиском (рег. Дк219154)", "exclusion": true, "episodes": 20}, {"id": "kinopoisk", "name": "Кинопоиск ООО", "schemeName": "Кинопоиск", "vho": "Нет", "period": "21.01.2025 — 20.01.2031", "contract": "Дк219154", "territory": "СНГ+ и Россия", "rights": [{"label": "AVOD", "status": "nonexclusive"}, {"label": "EST", "status": "nonexclusive"}, {"label": "FVOD", "status": "nonexclusive"}, {"label": "SVOD", "status": "nonexclusive"}, {"label": "TVOD", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "Кинопоиск", "role": "Получатель прав через Премьер", "limitation": "ХОЛДБЭК по договору с Кинопоиском (рег. Дк219154)", "exclusion": false, "episodes": 20}];
+const rightsRowsV70 = [{"id": "owner", "name": "Комеди Клаб продакшн ООО", "schemeName": "Comedy Club Production", "vho": "Нет", "period": "11.12.2024 — 10.12.2094", "contract": "Д475897", "territory": "Весь мир", "rights": [{"label": "ALL", "status": "exclusive"}], "platform": "ГПМ РТВ", "role": "Правообладатель", "limitation": "", "exclusion": false, "episodes": 20, "territoryFull": "Весь мир", "limitationDetail": "", "sublicensing": "ALL"}, {"id": "tnt", "name": "ТНТ-Телесеть АО", "schemeName": "ТНТ", "vho": "Да", "period": "01.01.2025 — 30.01.2028", "contract": "Дк214323", "territory": "Россия", "rights": [{"label": "Catch Up", "status": "exclusive"}, {"label": "Simulcast", "status": "exclusive"}, {"label": "ВОСПРОИЗВЕДЕНИЕ", "status": "nonexclusive"}, {"label": "ИСПОЛЬЗОВАНИЕ ЭЛЕМЕНТОВ", "status": "nonexclusive"}, {"label": "ПУБЛИЧНОЕ ИСПОЛНЕНИЕ", "status": "nonexclusive"}, {"label": "ПУБЛИЧНЫЙ ПОКАЗ", "status": "nonexclusive"}, {"label": "РАДИО", "status": "nonexclusive"}, {"label": "ТВ free", "status": "nonexclusive"}], "platform": "ТНТ", "role": "Получатель прав от ГПМ РТВ", "limitation": "", "exclusion": true, "episodes": 20, "exclusions": ["Исключая: Лицензионная музыка / фонограммы для анонсов"], "territoryFull": "Россия", "limitationDetail": "", "sublicensing": "ALL"}, {"id": "tnt", "name": "ТНТ-Телесеть АО", "schemeName": "ТНТ", "vho": "Да", "period": "01.01.2025 — 30.01.2028", "contract": "Дк214323", "territory": "Весь мир, исключая Россию", "rights": [{"label": "ВОСПРОИЗВЕДЕНИЕ", "status": "nonexclusive"}, {"label": "Catch Up", "status": "nonexclusive"}, {"label": "Simulcast", "status": "nonexclusive"}, {"label": "ИСПОЛЬЗОВАНИЕ ЭЛЕМЕНТОВ", "status": "nonexclusive"}], "platform": "ТНТ", "role": "Получатель прав от ГПМ РТВ", "limitation": "", "exclusion": true, "episodes": 20, "exclusions": ["Исключая: Лицензионная музыка / фонограммы для анонсов"], "territoryFull": "Весь мир, исключая: Россия", "limitationDetail": "", "sublicensing": "ALL"}, {"id": "premier", "name": "Премьер ООО", "schemeName": "Премьер", "vho": "Да", "period": "20.01.2025 — 19.01.2026", "contract": "Дк217821", "territory": "СНГ+ и Россия", "rights": [{"label": "EST", "status": "exclusive"}, {"label": "FVOD", "status": "exclusive"}, {"label": "SVOD", "status": "exclusive"}, {"label": "TVOD", "status": "exclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "PREMIER", "role": "Получатель цифровых прав от ГПМ РТВ", "limitation": "", "exclusion": false, "episodes": 20, "territoryFull": "Россия; СНГ+: Грузия, Украина, Абхазия, Южная Осетия, Азербайджан, Армения, Беларусь, Кыргызстан, Молдова, Таджикистан, Туркменистан, Узбекистан, Казахстан", "limitationDetail": "", "sublicensing": "ООО «Кинопоиск»"}, {"id": "premier", "name": "Премьер ООО", "schemeName": "Премьер", "vho": "Да", "period": "20.01.2025 — 19.01.2026", "contract": "Дк217821", "territory": "Весь мир, исключая СНГ+ и Россию", "rights": [{"label": "EST", "status": "nonexclusive"}, {"label": "FVOD", "status": "nonexclusive"}, {"label": "SVOD", "status": "nonexclusive"}, {"label": "TVOD", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "PREMIER", "role": "Получатель цифровых прав от ГПМ РТВ", "limitation": "", "exclusion": true, "episodes": 20, "territoryFull": "Весь мир, исключая: Россия; СНГ+: Грузия, Украина, Абхазия, Южная Осетия, Азербайджан, Армения, Беларусь, Кыргызстан, Молдова, Таджикистан, Туркменистан, Узбекистан, Казахстан", "limitationDetail": "", "sublicensing": "ООО «Кинопоиск»"}, {"id": "premier", "name": "Премьер ООО", "schemeName": "Премьер", "vho": "Да", "period": "20.01.2026 — 19.01.2029", "contract": "Дк217821", "territory": "СНГ+ и Россия", "rights": [{"label": "AVOD", "status": "exclusive"}, {"label": "EST", "status": "exclusive"}, {"label": "FVOD", "status": "exclusive"}, {"label": "SVOD", "status": "exclusive"}, {"label": "TVOD", "status": "exclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "PREMIER", "role": "Получатель цифровых прав от ГПМ РТВ", "limitation": "", "exclusion": false, "episodes": 20, "territoryFull": "Россия; СНГ+: Грузия, Украина, Абхазия, Южная Осетия, Азербайджан, Армения, Беларусь, Кыргызстан, Молдова, Таджикистан, Туркменистан, Узбекистан, Казахстан", "limitationDetail": "", "sublicensing": "Партнёры сервиса Премьер"}, {"id": "premier", "name": "Премьер ООО", "schemeName": "Премьер", "vho": "Да", "period": "20.01.2026 — 19.01.2031", "contract": "Дк217821", "territory": "Весь мир, исключая СНГ+ и Россию", "rights": [{"label": "AVOD", "status": "nonexclusive"}, {"label": "EST", "status": "nonexclusive"}, {"label": "FVOD", "status": "nonexclusive"}, {"label": "SVOD", "status": "nonexclusive"}, {"label": "TVOD", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "PREMIER", "role": "Получатель цифровых прав от ГПМ РТВ", "limitation": "", "exclusion": true, "episodes": 20, "territoryFull": "Весь мир, исключая: Россия; СНГ+: Грузия, Украина, Абхазия, Южная Осетия, Азербайджан, Армения, Беларусь, Кыргызстан, Молдова, Таджикистан, Туркменистан, Узбекистан, Казахстан", "limitationDetail": "", "sublicensing": "Партнёры сервиса Премьер"}, {"id": "premier", "name": "Премьер ООО", "schemeName": "Премьер", "vho": "Да", "period": "20.01.2029 — 19.01.2031", "contract": "Дк217821", "territory": "СНГ+ и Россия", "rights": [{"label": "AVOD", "status": "nonexclusive"}, {"label": "EST", "status": "nonexclusive"}, {"label": "FVOD", "status": "nonexclusive"}, {"label": "SVOD", "status": "nonexclusive"}, {"label": "TVOD", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "PREMIER", "role": "Получатель цифровых прав от ГПМ РТВ", "limitation": "", "exclusion": false, "episodes": 20, "territoryFull": "Россия; СНГ+: Грузия, Украина, Абхазия, Южная Осетия, Азербайджан, Армения, Беларусь, Кыргызстан, Молдова, Таджикистан, Туркменистан, Узбекистан, Казахстан", "limitationDetail": "", "sublicensing": "Партнёры сервиса Премьер"}, {"id": "druzhba", "name": "Дружба Мьюзик ООО", "schemeName": "Дружба Мьюзик", "vho": "Да", "period": "20.01.2025 — 29.01.2028", "contract": "Дк218062", "territory": "Весь мир, исключая Украину и Россию", "rights": [{"label": "Catch Up", "status": "nonexclusive"}, {"label": "Simulcast", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}, {"label": "ТВ free", "status": "nonexclusive"}, {"label": "ТВ pay", "status": "nonexclusive"}], "platform": "INT_TNT4 · ТНТint", "role": "Получатель международных прав от ГПМ РТВ", "limitation": "", "exclusion": true, "episodes": 13, "territoryFull": "Весь мир, исключая: Россия, Украина", "limitationDetail": "", "sublicensing": "ALL"}, {"id": "druzhba", "name": "Дружба Мьюзик ООО", "schemeName": "Дружба Мьюзик", "vho": "Да", "period": "03.02.2025 — 05.02.2028", "contract": "Дк218934", "territory": "Весь мир, исключая Украину и Россию", "rights": [{"label": "Catch Up", "status": "nonexclusive"}, {"label": "Simulcast", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}, {"label": "ТВ free", "status": "nonexclusive"}, {"label": "ТВ pay", "status": "nonexclusive"}], "platform": "INT_TNT4 · ТНТint", "role": "Получатель международных прав от ГПМ РТВ", "limitation": "", "exclusion": true, "episodes": 7, "territoryFull": "Весь мир, исключая: Россия, Украина", "limitationDetail": "", "sublicensing": "ALL"}, {"id": "kinopoisk", "name": "Кинопоиск ООО", "schemeName": "Кинопоиск", "vho": "Нет", "period": "20.01.2025 — 20.01.2029", "contract": "Дк219154", "territory": "СНГ+ и Россия", "rights": [{"label": "AVOD", "status": "exclusive"}, {"label": "EST", "status": "exclusive"}, {"label": "FVOD", "status": "exclusive"}, {"label": "SVOD", "status": "exclusive"}, {"label": "TVOD", "status": "exclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "Кинопоиск", "role": "Получатель прав через Премьер", "limitation": "ХОЛДБЭК по договору с Кинопоиском (рег. Дк219154)", "exclusion": false, "episodes": 20, "territoryFull": "Россия; СНГ+: Грузия, Украина, Абхазия, Южная Осетия, Азербайджан, Армения, Беларусь, Кыргызстан, Молдова, Таджикистан, Туркменистан, Узбекистан, Казахстан", "limitationDetail": "Ограничивающий договор: Дк219154\nОграничение: ХОЛДБЭКИ И ОСОБЫЕ УСЛОВИЯ\n\nДемис и Марина\t\nс 13.01.2025 по 13.01.2029  (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по 13.01.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты открытия прав)\n\t\nКупцы и дети\t\nс 20.01.2025 по 20.01.2029 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по 20.01.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nДевушки с Макаровым. 5 сезон\nс 20.01.2025 по 20.01.2029 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по 20.01.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nУнивер. Молодые\t\nс 10.03.2025 по 10.03.2030 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \n с 29.05.2025 по 10.03.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nОстаться друзьями \t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по TBD ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nПожить как люди \t\nс 14.04.2025 по 14.04.2029 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2029 по 14.04.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nДень семьи (Странная фамилия)\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\nВторой брак \t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nБукины. 2 сезон\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nПро это самое\t\nс 14.04.2025 по 14.04.2029 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по 14.04.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\nРейс 314\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\nПервокурсницы. 2 сезон\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\nУнивер. Молодые (продолжение)\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nДевушки с Макаровым. 4 сезон\t\nс 29.05.2025 по 20.01.2029 (ХБ с ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD\n\t\t\nПервокурсницы. 1 сезон\t\nTBD  (ХБ с ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD\n\nИСКЛЮЧЕНИЯ ИЗ ХОЛДБЭКА\nНе является нарушением исключительной лицензии со стороны Лицензиара:\nА) использование Контента посредством Бесплатного телевизионного показа (Free TV) в составе телеканалов компаний Группы ГПМ на территории Российской Федерации; \nБ) использование Контента посредством Платного телевизионного показа (Pay TV) в составе телеканалов компаний Группы ГПМ на территории всех стран мира, за исключением Российской Федерации; \nВ) доведение первых двух серий Контента способами FVOD и/или AVOD на территории всего мира на официальном сайте телеканала «ТНТ»  официальном сайте телеканала «ТНТ»  (https://tnt-online.ru), на официальной странице телеканала «ТНТ» на сайте Rutube (https://rutube.ru/feeds/tnt/) и «YouTube», а также на веб-сайте https://premier.one/ и относящихся к нему программных пр", "sublicensing": "ALL"}, {"id": "kinopoisk", "name": "Кинопоиск ООО", "schemeName": "Кинопоиск", "vho": "Нет", "period": "20.01.2025 — 20.01.2031", "contract": "Дк219154", "territory": "Весь мир, исключая СНГ+ и Россию", "rights": [{"label": "AVOD", "status": "nonexclusive"}, {"label": "EST", "status": "nonexclusive"}, {"label": "FVOD", "status": "nonexclusive"}, {"label": "SVOD", "status": "nonexclusive"}, {"label": "TVOD", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "Кинопоиск", "role": "Получатель прав через Премьер", "limitation": "ХОЛДБЭК по договору с Кинопоиском (рег. Дк219154)", "exclusion": true, "episodes": 20, "territoryFull": "Весь мир, исключая: Россия; СНГ+: Грузия, Украина, Абхазия, Южная Осетия, Азербайджан, Армения, Беларусь, Кыргызстан, Молдова, Таджикистан, Туркменистан, Узбекистан, Казахстан", "limitationDetail": "Ограничивающий договор: Дк219154\nОграничение: ХОЛДБЭКИ И ОСОБЫЕ УСЛОВИЯ\n\nДемис и Марина\t\nс 13.01.2025 по 13.01.2029  (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по 13.01.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты открытия прав)\n\t\nКупцы и дети\t\nс 20.01.2025 по 20.01.2029 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по 20.01.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nДевушки с Макаровым. 5 сезон\nс 20.01.2025 по 20.01.2029 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по 20.01.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nУнивер. Молодые\t\nс 10.03.2025 по 10.03.2030 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \n с 29.05.2025 по 10.03.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nОстаться друзьями \t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по TBD ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nПожить как люди \t\nс 14.04.2025 по 14.04.2029 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2029 по 14.04.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nДень семьи (Странная фамилия)\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\nВторой брак \t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nБукины. 2 сезон\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nПро это самое\t\nс 14.04.2025 по 14.04.2029 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по 14.04.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\nРейс 314\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\nПервокурсницы. 2 сезон\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\nУнивер. Молодые (продолжение)\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nДевушки с Макаровым. 4 сезон\t\nс 29.05.2025 по 20.01.2029 (ХБ с ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD\n\t\t\nПервокурсницы. 1 сезон\t\nTBD  (ХБ с ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD\n\nИСКЛЮЧЕНИЯ ИЗ ХОЛДБЭКА\nНе является нарушением исключительной лицензии со стороны Лицензиара:\nА) использование Контента посредством Бесплатного телевизионного показа (Free TV) в составе телеканалов компаний Группы ГПМ на территории Российской Федерации; \nБ) использование Контента посредством Платного телевизионного показа (Pay TV) в составе телеканалов компаний Группы ГПМ на территории всех стран мира, за исключением Российской Федерации; \nВ) доведение первых двух серий Контента способами FVOD и/или AVOD на территории всего мира на официальном сайте телеканала «ТНТ»  официальном сайте телеканала «ТНТ»  (https://tnt-online.ru), на официальной странице телеканала «ТНТ» на сайте Rutube (https://rutube.ru/feeds/tnt/) и «YouTube», а также на веб-сайте https://premier.one/ и относящихся к нему программных пр", "sublicensing": "ALL"}, {"id": "kinopoisk", "name": "Кинопоиск ООО", "schemeName": "Кинопоиск", "vho": "Нет", "period": "21.01.2025 — 20.01.2031", "contract": "Дк219154", "territory": "СНГ+ и Россия", "rights": [{"label": "AVOD", "status": "nonexclusive"}, {"label": "EST", "status": "nonexclusive"}, {"label": "FVOD", "status": "nonexclusive"}, {"label": "SVOD", "status": "nonexclusive"}, {"label": "TVOD", "status": "nonexclusive"}, {"label": "Фрагменты для анонсов", "status": "nonexclusive"}], "platform": "Кинопоиск", "role": "Получатель прав через Премьер", "limitation": "ХОЛДБЭК по договору с Кинопоиском (рег. Дк219154)", "exclusion": false, "episodes": 20, "territoryFull": "Россия; СНГ+: Грузия, Украина, Абхазия, Южная Осетия, Азербайджан, Армения, Беларусь, Кыргызстан, Молдова, Таджикистан, Туркменистан, Узбекистан, Казахстан", "limitationDetail": "Ограничивающий договор: Дк219154\nОграничение: ХОЛДБЭКИ И ОСОБЫЕ УСЛОВИЯ\n\nДемис и Марина\t\nс 13.01.2025 по 13.01.2029  (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по 13.01.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты открытия прав)\n\t\nКупцы и дети\t\nс 20.01.2025 по 20.01.2029 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по 20.01.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nДевушки с Макаровым. 5 сезон\nс 20.01.2025 по 20.01.2029 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по 20.01.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nУнивер. Молодые\t\nс 10.03.2025 по 10.03.2030 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \n с 29.05.2025 по 10.03.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nОстаться друзьями \t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по TBD ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nПожить как люди \t\nс 14.04.2025 по 14.04.2029 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2029 по 14.04.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nДень семьи (Странная фамилия)\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\nВторой брак \t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nБукины. 2 сезон\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nПро это самое\t\nс 14.04.2025 по 14.04.2029 (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nс 29.05.2025 по 14.04.2026 ХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\nРейс 314\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\nПервокурсницы. 2 сезон\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\nУнивер. Молодые (продолжение)\t\nTBD (ХБ до ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD. \nХБ на Бесплтаное ТВ на РФ и Платное ТВ на мир, кроме РФ с 29.05.2025 по TBD (с ДАТЫ приложения и по истеч. 12 месяцев с даты)\n\t\t\nДевушки с Макаровым. 4 сезон\t\nс 29.05.2025 по 20.01.2029 (ХБ с ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD\n\t\t\nПервокурсницы. 1 сезон\t\nTBD  (ХБ с ДАТЫ приложения) на SVOD, TVOD, EST, AVOD, FVOD\n\nИСКЛЮЧЕНИЯ ИЗ ХОЛДБЭКА\nНе является нарушением исключительной лицензии со стороны Лицензиара:\nА) использование Контента посредством Бесплатного телевизионного показа (Free TV) в составе телеканалов компаний Группы ГПМ на территории Российской Федерации; \nБ) использование Контента посредством Платного телевизионного показа (Pay TV) в составе телеканалов компаний Группы ГПМ на территории всех стран мира, за исключением Российской Федерации; \nВ) доведение первых двух серий Контента способами FVOD и/или AVOD на территории всего мира на официальном сайте телеканала «ТНТ»  официальном сайте телеканала «ТНТ»  (https://tnt-online.ru), на официальной странице телеканала «ТНТ» на сайте Rutube (https://rutube.ru/feeds/tnt/) и «YouTube», а также на веб-сайте https://premier.one/ и относящихся к нему программных пр", "sublicensing": "ALL"}];
 
 function applyRightsRowsV70(){
   if (typeof rightsRowsV63 !== 'undefined' && Array.isArray(rightsRowsV63)) {
@@ -2576,5 +2576,302 @@ function renderRightsDetail(){
       <span>Ограничения</span>
       <p>${(d.limitations && d.limitations.length) ? d.limitations.join('<br><br>') : 'Нет ограничений'}</p>
     </div>
+  `;
+}
+
+
+/* v73: expandable detailed limitations and countries */
+const expandedTerritoriesV73 = new Set();
+const expandedLimitationsV73 = new Set();
+
+function safeHtmlV73(value){
+  return String(value || '')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#039;');
+}
+
+function detailTextHtmlV73(value){
+  return safeHtmlV73(value).replace(/\n/g, '<br>');
+}
+
+function toggleTerritoryV73(key){
+  if (expandedTerritoriesV73.has(key)) expandedTerritoriesV73.delete(key);
+  else expandedTerritoriesV73.add(key);
+  renderRightsDetail();
+}
+
+function toggleLimitationsV73(entityKey){
+  if (expandedLimitationsV73.has(entityKey)) expandedLimitationsV73.delete(entityKey);
+  else expandedLimitationsV73.add(entityKey);
+  renderRightsDetail();
+}
+
+function territoryButtonHtmlV73(row, rowKey){
+  const full = row.territoryFull || row.territory || '';
+  const compact = row.territory || '';
+  const isExpanded = expandedTerritoriesV73.has(rowKey);
+  const needsExpand = full && full !== compact;
+  return `
+    <button class="territoryToggleBtn" onclick="${needsExpand ? `toggleTerritoryV73('${rowKey}')` : ''}">
+      <span>${safeHtmlV73(compact)}</span>
+      ${needsExpand ? `<b>${isExpanded ? 'Свернуть' : 'Показать страны'}</b>` : ''}
+    </button>
+    ${isExpanded && needsExpand ? `<div class="territoryFullText">${detailTextHtmlV73(full)}</div>` : ''}
+  `;
+}
+
+function limitationBlockHtmlV73(d, entityKey){
+  const summaries = (d.limitations && d.limitations.length) ? d.limitations : ['Нет ограничений'];
+  const details = uniqueValuesV70((d.rows || []).map(r => r.limitationDetail));
+  const hasDetails = details.length > 0;
+  const isExpanded = expandedLimitationsV73.has(entityKey);
+  return `
+    <div class="rightsDetailSection warning v72LimitationsLast">
+      <button class="limitationToggleBtn" onclick="${hasDetails ? `toggleLimitationsV73('${entityKey}')` : ''}">
+        <span>Ограничения</span>
+        ${hasDetails ? `<b>${isExpanded ? 'Свернуть подробно' : 'Показать подробно'}</b>` : ''}
+      </button>
+      <p>${summaries.map(x => detailTextHtmlV73(x)).join('<br><br>')}</p>
+      ${hasDetails && isExpanded ? `<div class="limitationDetailedText">${details.map(x => detailTextHtmlV73(x)).join('<br><br>')}</div>` : ''}
+    </div>
+  `;
+}
+
+function renderRightsDetail(){
+  const card=document.getElementById('rightsDetailCard');
+  const el=document.getElementById('rightsDetail');
+  if(!card || !el) return;
+  const detailsMap=getRightsDetailsMap();
+  const d=selectedRightsEntity ? detailsMap[selectedRightsEntity] : null;
+
+  if(!d){
+    card.style.display='block';
+    el.innerHTML=`
+      ${detailColorLegendHtmlV72()}
+      <div class="rightsDetailEmpty">
+        <b>Детализация прав</b>
+        <span>Нажмите на блок схемы, чтобы посмотреть права, периоды, территории, кол-во серий и ограничения.</span>
+      </div>
+    `;
+    return;
+  }
+
+  const rows=[
+    ['Роль в цепочке', d.role],
+    ['Договор', d.contract],
+    ['Территория', d.territory],
+    ['Канал / платформа', d.platform],
+    ['Продажа', d.sale],
+    ['Сублицензирование', d.sublicensing]
+  ];
+
+  const rightsRowsHtml=(d.rows||[]).map((row, idx) => {
+    const rowKey = `${selectedRightsEntity}_${idx}`;
+    return `
+      <div class="detailRightsRow v72RightsRow">
+        <div class="detailRightsRowTop v72PeriodLine">
+          <div class="detailPeriod">${safeHtmlV73(row.period)}${row.contract ? ` <span class="contractMini">: ${safeHtmlV73(row.contract)}</span>` : ''}</div>
+          <div class="detailEpisodesInline">Кол-во серий: <b>${safeHtmlV73(row.episodes || '—')}</b></div>
+        </div>
+        <div class="detailTerritoryRow v72TerritoryLine">
+          ${territoryButtonHtmlV73(row, rowKey)}
+        </div>
+        <div class="detailRightsChips v72RightsChips">${rightChipsHtmlV70(row.rights)}</div>
+        ${exclusionChipsHtmlV71(row)}
+      </div>
+    `;
+  }).join('');
+
+  const entityKey = selectedRightsEntity || 'none';
+
+  el.innerHTML=`
+    ${detailColorLegendHtmlV72()}
+    <div class="rightsDetailHeader">
+      <div>
+        <span>Детализация прав</span>
+        <h2>${safeHtmlV73(d.title)}</h2>
+      </div>
+      <button onclick="selectedRightsEntity=null; renderRightsFlowRedesign(getSelectedRightsData()); renderRightsDetail()">×</button>
+    </div>
+    <div class="rightsDetailGrid">${rows.map(([k,v]) => `<div><span>${safeHtmlV73(k)}</span><b>${safeHtmlV73(v)}</b></div>`).join('')}</div>
+    <div class="rightsDetailSection">
+      <span>Права по периодам</span>
+      <div class="detailRightsList">${rightsRowsHtml}</div>
+    </div>
+    ${limitationBlockHtmlV73(d, entityKey)}
+  `;
+}
+
+
+/* v75: report start + cleaner detail grid + sublicensing per row */
+function territoryButtonHtmlV73(row, rowKey){
+  const full = row.territoryFull || row.territory || '';
+  const compact = row.territory || '';
+  const isExpanded = expandedTerritoriesV73.has(rowKey);
+  const needsExpand = full && full !== compact;
+  return `
+    <button class="territoryToggleBtn" onclick="${needsExpand ? `toggleTerritoryV73('${rowKey}')` : ''}">
+      <span>${safeHtmlV73(compact)}</span>
+      ${needsExpand ? `<b>${isExpanded ? 'Свернуть' : 'Подробно'}</b>` : ''}
+    </button>
+    ${isExpanded && needsExpand ? `<div class="territoryFullText">${detailTextHtmlV73(full)}</div>` : ''}
+  `;
+}
+
+function renderRightsDetail(){
+  const card=document.getElementById('rightsDetailCard');
+  const el=document.getElementById('rightsDetail');
+  if(!card || !el) return;
+  const detailsMap=getRightsDetailsMap();
+  const d=selectedRightsEntity ? detailsMap[selectedRightsEntity] : null;
+
+  if(!d){
+    card.style.display='block';
+    el.innerHTML=`
+      ${detailColorLegendHtmlV72()}
+      <div class="rightsDetailEmpty">
+        <b>Детализация прав</b>
+        <span>Нажмите на блок схемы, чтобы посмотреть права, периоды, территории, кол-во серий, сублицензирование и ограничения.</span>
+      </div>
+    `;
+    return;
+  }
+
+  const rows=[
+    ['Роль в цепочке', d.role],
+    ['Договор', d.contract],
+    ['Канал / платформа', d.platform],
+    ['Продажа', d.sale]
+  ];
+
+  const rightsRowsHtml=(d.rows||[]).map((row, idx) => {
+    const rowKey = `${selectedRightsEntity}_${idx}`;
+    return `
+      <div class="detailRightsRow v72RightsRow">
+        <div class="detailRightsRowTop v72PeriodLine">
+          <div class="detailPeriod">${safeHtmlV73(row.period)}${row.contract ? ` <span class="contractMini">: ${safeHtmlV73(row.contract)}</span>` : ''}</div>
+          <div class="detailEpisodesInline">Кол-во серий: <b>${safeHtmlV73(row.episodes || '—')}</b></div>
+        </div>
+
+        <div class="detailTerritoryRow v72TerritoryLine">
+          ${territoryButtonHtmlV73(row, rowKey)}
+        </div>
+
+        <div class="detailSubRow">
+          <span>Сублицензирование</span>
+          <b>${safeHtmlV73(row.sublicensing || '—')}</b>
+        </div>
+
+        <div class="detailRightsChips v72RightsChips">${rightChipsHtmlV70(row.rights)}</div>
+        ${exclusionChipsHtmlV71(row)}
+      </div>
+    `;
+  }).join('');
+
+  const entityKey = selectedRightsEntity || 'none';
+
+  el.innerHTML=`
+    ${detailColorLegendHtmlV72()}
+    <div class="rightsDetailHeader">
+      <div>
+        <span>Детализация прав</span>
+        <h2>${safeHtmlV73(d.title)}</h2>
+      </div>
+      <button onclick="selectedRightsEntity=null; renderRightsFlowRedesign(getSelectedRightsData()); renderRightsDetail()">×</button>
+    </div>
+    <div class="rightsDetailGrid">${rows.map(([k,v]) => `<div><span>${safeHtmlV73(k)}</span><b>${safeHtmlV73(v)}</b></div>`).join('')}</div>
+    <div class="rightsDetailSection">
+      <span>Права по периодам</span>
+      <div class="detailRightsList">${rightsRowsHtml}</div>
+    </div>
+    ${limitationBlockHtmlV73(d, entityKey)}
+  `;
+}
+
+
+/* v76: compact channel/platform and sale in one row */
+function renderRightsDetail(){
+  const card=document.getElementById('rightsDetailCard');
+  const el=document.getElementById('rightsDetail');
+  if(!card || !el) return;
+  const detailsMap=getRightsDetailsMap();
+  const d=selectedRightsEntity ? detailsMap[selectedRightsEntity] : null;
+
+  if(!d){
+    card.style.display='block';
+    el.innerHTML=`
+      ${detailColorLegendHtmlV72()}
+      <div class="rightsDetailEmpty">
+        <b>Детализация прав</b>
+        <span>Нажмите на блок схемы, чтобы посмотреть права, периоды, территории, кол-во серий, сублицензирование и ограничения.</span>
+      </div>
+    `;
+    return;
+  }
+
+  const mainRows=[
+    ['Роль в цепочке', d.role],
+    ['Договор', d.contract]
+  ];
+
+  const rightsRowsHtml=(d.rows||[]).map((row, idx) => {
+    const rowKey = `${selectedRightsEntity}_${idx}`;
+    return `
+      <div class="detailRightsRow v72RightsRow">
+        <div class="detailRightsRowTop v72PeriodLine">
+          <div class="detailPeriod">${safeHtmlV73(row.period)}${row.contract ? ` <span class="contractMini">: ${safeHtmlV73(row.contract)}</span>` : ''}</div>
+          <div class="detailEpisodesInline">Кол-во серий: <b>${safeHtmlV73(row.episodes || '—')}</b></div>
+        </div>
+
+        <div class="detailTerritoryRow v72TerritoryLine">
+          ${territoryButtonHtmlV73(row, rowKey)}
+        </div>
+
+        <div class="detailSubRow">
+          <span>Сублицензирование</span>
+          <b>${safeHtmlV73(row.sublicensing || '—')}</b>
+        </div>
+
+        <div class="detailRightsChips v72RightsChips">${rightChipsHtmlV70(row.rights)}</div>
+        ${exclusionChipsHtmlV71(row)}
+      </div>
+    `;
+  }).join('');
+
+  const entityKey = selectedRightsEntity || 'none';
+
+  el.innerHTML=`
+    ${detailColorLegendHtmlV72()}
+    <div class="rightsDetailHeader">
+      <div>
+        <span>Детализация прав</span>
+        <h2>${safeHtmlV73(d.title)}</h2>
+      </div>
+      <button onclick="selectedRightsEntity=null; renderRightsFlowRedesign(getSelectedRightsData()); renderRightsDetail()">×</button>
+    </div>
+
+    <div class="rightsDetailGrid v76MainGrid">
+      ${mainRows.map(([k,v]) => `<div><span>${safeHtmlV73(k)}</span><b>${safeHtmlV73(v)}</b></div>`).join('')}
+    </div>
+
+    <div class="detailCompactInfoRow">
+      <div>
+        <span>Канал / платформа</span>
+        <b>${safeHtmlV73(d.platform)}</b>
+      </div>
+      <div>
+        <span>Продажа</span>
+        <b>${safeHtmlV73(d.sale)}</b>
+      </div>
+    </div>
+
+    <div class="rightsDetailSection">
+      <span>Права по периодам</span>
+      <div class="detailRightsList">${rightsRowsHtml}</div>
+    </div>
+    ${limitationBlockHtmlV73(d, entityKey)}
   `;
 }
