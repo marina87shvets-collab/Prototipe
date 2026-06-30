@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ТНТ — прототип</title>
-<link rel="stylesheet" href="style.css?v=51">
+<link rel="stylesheet" href="style.css?v=72">
 </head>
 <body>
 <main class="phone">
@@ -20,7 +20,7 @@
   <div class="section"><h2>Каст</h2><button id="castToggle" onclick="toggleCast()">Показать всех</button></div>
   <div class="card"><table id="cast"></table></div>
   <h2>Сезоны</h2><div id="seasons" class="card"></div>
-  <div class="actions"><button class="secondary" onclick="analytics()">⚖ Сравнить сезоны</button></div>
+  <div class="actions"><button class="secondary" onclick="analytics()">⚖ Сравнить сезоны</button><button class="primary" onclick="rights()">Показать права</button></div>
 </section>
 
 <section id="analytics" class="screen">
@@ -54,6 +54,45 @@
   <footer><span onclick="show('search')">⌕<br>Поиск</span><span onclick="show('project')">▣<br>Проекты</span><span class="on" onclick="analytics()">⚖<br>Сравнение</span></footer>
 </section>
 
+
+<section id="rights" class="screen">
+  <div class="head"><button onclick="show('project')" class="back">‹</button><h1>Права</h1><button onclick="show('project')" class="back">⌯</button></div>
+
+  <div class="card rightsFilterCard">
+    <div class="rightsSeasonRow">
+      <h2>Права по сезонам</h2>
+      <div class="rightsFilterControls">
+        <label>Сезон
+          <select id="rightsSeasonSelect" onchange="renderRights()">
+            <option value="1">Сезон 1</option>
+            <option value="2">Сезон 2</option>
+            <option value="3">Сезон 3</option>
+            <option value="4">Сезон 4</option>
+            <option value="5" selected>Сезон 5</option>
+          </select>
+        </label>
+        <label>ВХО
+          <select id="rightsVhoSelect" onchange="renderRights()">
+            <option value="ALL">Все</option>
+            <option value="Да">Да</option>
+            <option value="Нет">Нет</option>
+          </select>
+        </label>
+      </div>
+    </div>
+</div>
+
+  <div class="card rightsFlowCard">
+    <h2>Схема движения прав</h2>
+    <div id="rightsFlow"></div>
+  </div>
+
+  <div class="card rightsDetailCard" id="rightsDetailCard">
+    <div id="rightsDetail"></div>
+  </div>
+  <footer><span onclick="show('project')">▣<br>Проект</span><span onclick="analytics()">⚖<br>Сравнение</span><span class="on" onclick="rights()">§<br>Права</span></footer>
+</section>
+
 <section id="environment" class="screen">
   <div class="head"><button onclick="show('analytics')" class="back">‹</button><h1>EPG окружение</h1><button onclick="show('analytics')" class="back">⌯</button></div>
   <div class="epgCard epgCardFull"><div id="environmentChart"></div></div>
@@ -61,5 +100,5 @@
 </section>
 
 </main>
-<script src="script.js?v=51"></script>
+<script src="script.js?v=72"></script>
 </body></html>
