@@ -2526,3 +2526,664 @@ footer span{cursor:pointer;}
   line-height:1.18;
   font-weight:650;
 }
+
+
+/* v77 minute-by-minute report */
+.minuteChoiceCard{border-color:rgba(0,229,255,.55)}
+.minuteBadge{background:rgba(0,229,255,.15); color:#00E5FF}
+.minuteReportScreen .head{margin-bottom:12px}
+.minuteTabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px}
+.minuteTabs button{height:34px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#C7CAE4;font-size:10px;font-weight:700}.minuteTabs button.on{color:#081036;background:linear-gradient(135deg,#00E5FF,#66F5FF);border-color:#00E5FF}
+.minuteHeroCard{border-color:rgba(0,229,255,.45);background:linear-gradient(160deg,rgba(0,229,255,.12),rgba(143,43,255,.12) 55%,rgba(9,0,82,.95))}.minuteHeroCard h2{font-size:20px;margin:8px 0}.minuteHeroCard p{color:#C9D0F5;margin:0;font-size:12px}.minuteMeta{display:flex;gap:6px;flex-wrap:wrap}.minuteMeta span,.programMinuteMeta span,.minuteAdMeta span{border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:4px 7px;font-size:9px;color:#D7DDF9;background:rgba(255,255,255,.05)}
+.minuteKpiGrid,.entryExitGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px}.minuteKpiGrid div,.entryExitGrid div{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);border-radius:13px;padding:9px 7px;min-height:58px}.minuteKpiGrid span,.entryExitGrid span{display:block;color:#AEB8DD;font-size:8px;line-height:1.12;text-transform:uppercase;letter-spacing:.03em}.minuteKpiGrid b,.entryExitGrid b{display:block;color:white;font-size:16px;margin-top:6px;line-height:1}.entryExitGrid b{font-size:14px}
+.dayStrip{height:92px;display:flex;align-items:flex-end;gap:3px;padding:6px 0 12px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:10px}.dayStripSeg{flex:1;min-width:5px;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#00E5FF,#2B63FF)}
+.minuteScheduleList{display:flex;flex-direction:column;gap:7px}.minuteScheduleRow{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08)}.minuteScheduleRow:last-child{border-bottom:0}.minuteScheduleRow b{display:block;font-size:11px;color:#FFD98D}.minuteScheduleRow span{display:block;font-size:10px;color:#E9ECFF;line-height:1.25;margin-top:2px}.minuteScheduleRow strong{font-size:13px;color:#00E5FF}
+.programMinuteCard h2{font-size:17px;line-height:1.25}.minuteLabel{display:block;color:#AEB8DD;text-transform:uppercase;font-size:9px;margin-bottom:5px}.programMinuteMeta{display:flex;gap:5px;flex-wrap:wrap}.minuteChartScroller{overflow-x:auto;padding-bottom:8px}.minuteLineSvg{width:640px;height:180px;display:block}.minuteArea{fill:rgba(0,229,255,.12)}.minuteLine{fill:none;stroke:#00E5FF;stroke-width:3;filter:drop-shadow(0 0 5px rgba(0,229,255,.7))}.minutePoint{fill:#fff;stroke:#00E5FF;stroke-width:1}.adBand{fill:rgba(255,86,98,.20)}.minuteAxisLabel{fill:#AEB8DD;font-size:9px}.minuteNote{font-size:10px;color:#AEB8DD;margin:6px 0 0}
+.minuteAdCard{border-color:rgba(255,102,112,.35)}.minuteAdTop{display:flex;justify-content:space-between;align-items:center;gap:10px}.minuteAdTop span{display:block;color:#FF8A92;font-size:9px;text-transform:uppercase}.minuteAdTop b{font-size:17px}.minuteAdTop strong{padding:5px 8px;border-radius:999px;background:rgba(255,86,98,.14);color:#FF8A92;font-size:10px}.minuteAdMeta{display:flex;gap:6px;margin:8px 0}.minuteAdCard details{font-size:11px;color:#DCE2FF}.minuteAdCard summary{cursor:pointer;color:#FFD98D}.minuteAdCard li{margin:6px 0;line-height:1.25}
+.competitorBars{display:flex;flex-direction:column;gap:8px}.competitorRow{display:grid;grid-template-columns:92px 1fr 44px;gap:8px;align-items:center}.competitorRow span{font-size:10px;color:#E8ECFF;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.competitorRow div{height:12px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.competitorRow i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#7A83FF,#00E5FF)}.competitorRow.target i{background:linear-gradient(90deg,#FFD166,#FF8F3D)}.competitorRow b{font-size:11px;text-align:right;color:white}
+
+
+/* v78 force active screen rendering for iOS/Safari */
+.screen.active{
+  display:block !important;
+}
+.reportChoiceCard[data-open-minute="1"]{
+  cursor:pointer;
+}
+
+
+/* v79 standalone minute report link */
+.minuteReportLink{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+}
+.minuteReportLink:visited{
+  color:inherit;
+}
+.minuteStandalone .screen{
+  padding-bottom:72px;
+}
+.minuteStandalone .head{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:linear-gradient(180deg, rgba(5,0,63,.98), rgba(5,0,63,.88));
+  backdrop-filter:blur(10px);
+  padding-top:4px;
+}
+.minuteStandalone .back{
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+/* v80 overview map and program selection fixes */
+.minuteHero.card{
+  padding:12px 14px;
+}
+.minuteHero.card span{
+  font-size:12px;
+  color:#FFFFFF;
+  font-weight:700;
+}
+.minuteHero.card h2,
+.minuteHero.card p{
+  display:none !important;
+}
+.minuteExplain{
+  margin:0 0 8px;
+  color:#B9C2EA;
+  font-size:10px;
+  line-height:1.35;
+}
+.dayShareLegend{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  margin:0 0 8px;
+  color:#AEB8DD;
+  font-size:8px;
+  line-height:1.25;
+}
+.dayShareLegend span{
+  display:flex;
+  gap:5px;
+  align-items:center;
+}
+.dayShareLegend i{
+  display:inline-block;
+  width:8px;
+  height:13px;
+  border-radius:3px;
+  background:linear-gradient(180deg,#00E5FF,#8F2BFF);
+}
+.dayShareLegend b{
+  color:#DDE5FF;
+  font-weight:500;
+}
+.dayStripAligned{
+  height:142px;
+  display:flex;
+  align-items:end;
+  gap:5px;
+  overflow-x:auto;
+  padding:18px 0 4px;
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+.dayStripAligned button{
+  position:relative;
+  width:30px;
+  min-width:30px;
+  height:116px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:center;
+  background:transparent;
+  border:0;
+  padding:0;
+  color:#FFFFFF;
+}
+.dayStripAligned i{
+  width:16px;
+  border-radius:6px 6px 2px 2px;
+  background:linear-gradient(180deg,#00E5FF,#8F2BFF);
+  box-shadow:0 0 12px rgba(0,229,255,.2);
+}
+.dayStripAligned .dayTime{
+  position:absolute;
+  bottom:-18px;
+  left:50%;
+  transform:translateX(-50%) rotate(-45deg);
+  transform-origin:center;
+  font-size:7px;
+  color:#AEB8DD;
+  white-space:nowrap;
+}
+.dayStripAligned .dayValue{
+  position:absolute;
+  top:-16px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:7px;
+  color:#FFFFFF;
+  white-space:nowrap;
+}
+.minuteScheduleRow{
+  width:100%;
+  text-align:left;
+  border:0;
+  cursor:pointer;
+}
+.minuteScheduleRow:active,
+.dayStripAligned button:active{
+  opacity:.75;
+}
+
+
+/* v81 restore v79 day Share strip and add duration/TVR to grid */
+.dayStrip{
+  height:92px;
+  display:flex;
+  align-items:flex-end;
+  gap:4px;
+  overflow-x:auto;
+  padding:10px 0 4px;
+  margin:4px 0 10px;
+  border-bottom:1px solid rgba(255,255,255,.13);
+}
+.dayStrip i{
+  position:relative;
+  display:block;
+  min-width:9px;
+  width:9px;
+  border-radius:8px 8px 2px 2px;
+  background:linear-gradient(180deg,#00E5FF,#8F2BFF);
+  cursor:pointer;
+}
+.dayStrip i span{
+  display:none;
+  position:absolute;
+  left:50%;
+  bottom:calc(100% + 6px);
+  transform:translateX(-50%);
+  white-space:nowrap;
+  z-index:8;
+  padding:4px 6px;
+  border-radius:7px;
+  background:rgba(5,0,63,.96);
+  border:1px solid rgba(255,255,255,.18);
+  color:#FFFFFF;
+  font-size:8px;
+  font-style:normal;
+  box-shadow:0 6px 16px rgba(0,0,0,.28);
+}
+.dayStrip i:hover span,
+.dayStrip i:active span{
+  display:block;
+}
+.dayShareLegend{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  margin:0 0 6px;
+  color:#AEB8DD;
+  font-size:8px;
+  line-height:1.25;
+}
+.dayShareLegend span{
+  display:flex;
+  gap:5px;
+  align-items:center;
+}
+.dayShareLegend i{
+  display:inline-block;
+  width:8px;
+  height:13px;
+  border-radius:3px;
+  background:linear-gradient(180deg,#00E5FF,#8F2BFF);
+}
+.dayShareLegend b{
+  color:#DDE5FF;
+  font-weight:500;
+}
+.dayStripAligned{
+  display:none !important;
+}
+.minuteScheduleRow{
+  width:100%;
+  text-align:left;
+  border:0;
+  cursor:pointer;
+  background:transparent;
+}
+.minuteScheduleRow .scheduleMain{
+  min-width:0;
+}
+.minuteScheduleRow .scheduleMain em{
+  display:block;
+  margin-top:4px;
+  color:#AEB8DD;
+  font-size:8px;
+  line-height:1.2;
+  font-style:normal;
+}
+.minuteScheduleRow strong{
+  white-space:nowrap;
+}
+
+
+/* v82 compact grid, renamed share to доля, graph restyle */
+.minuteKpiGrid .kpiWithNote small{
+  display:block;
+  margin-top:4px;
+  color:#AEB8DD;
+  font-size:7.6px;
+  line-height:1.2;
+  font-weight:500;
+  max-height:26px;
+  overflow:hidden;
+}
+.minuteScheduleRow{
+  min-height:46px;
+  padding:8px 0 !important;
+  align-items:center;
+}
+.minuteScheduleRow .scheduleMain{
+  min-width:0;
+  padding-right:8px;
+}
+.minuteScheduleRow .scheduleMain b{
+  font-size:9px;
+  line-height:1.1;
+}
+.minuteScheduleRow .scheduleMain span{
+  font-size:8px;
+  line-height:1.18;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.scheduleMetrics{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:2px;
+  min-width:78px;
+  text-align:right;
+}
+.scheduleMetrics strong{
+  color:#00E5FF;
+  font-size:11px;
+  line-height:1.05;
+  white-space:nowrap;
+}
+.scheduleMetrics small{
+  color:#AEB8DD;
+  font-size:7.4px;
+  line-height:1.1;
+  white-space:nowrap;
+}
+.minuteLine{
+  stroke:#FFFFFF !important;
+  stroke-width:1.15 !important;
+  fill:none !important;
+}
+.minutePoint{
+  fill:#FFFFFF !important;
+  stroke:#FFFFFF !important;
+  stroke-width:.6 !important;
+}
+.minuteAxisText{
+  fill:#FFFFFF !important;
+  opacity:.92 !important;
+  font-size:9px !important;
+}
+.adBand{
+  fill:rgba(230,230,230,.38) !important;
+  opacity:1 !important;
+}
+.minuteArea{
+  fill:rgba(255,255,255,.08) !important;
+}
+
+
+/* v83 restore program names font in schedule grid */
+.minuteScheduleRow .scheduleMain span,
+.minuteScheduleRow div span{
+  display:block;
+  color:#FFFFFF !important;
+  font-size:9px !important;
+  line-height:1.18 !important;
+  font-weight:400 !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+}
+.minuteScheduleRow .scheduleMain b,
+.minuteScheduleRow div b{
+  color:#FFFFFF;
+  font-size:10px;
+  line-height:1.15;
+  font-weight:700;
+}
+.minuteScheduleRow .scheduleMain em{
+  font-size:8px;
+  line-height:1.2;
+  font-weight:400;
+}
+
+
+/* v84 restore list format with duration + TVR near share */
+.minuteScheduleList{display:flex;flex-direction:column;gap:4px}
+.minuteScheduleRow{
+  grid-template-columns:minmax(0,1fr) auto !important;
+  gap:10px !important;
+  min-height:auto !important;
+  padding:9px 0 8px !important;
+  border-bottom:1px solid rgba(255,255,255,.10) !important;
+  align-items:start !important;
+}
+.minuteScheduleRow .scheduleMain{
+  min-width:0;
+  padding-right:8px;
+}
+.minuteScheduleRow .scheduleMain b{
+  color:#FFD98D !important;
+  font-size:11px !important;
+  line-height:1.08 !important;
+  font-weight:700 !important;
+  margin-bottom:3px;
+}
+.minuteScheduleRow .scheduleMain span{
+  color:#FFFFFF !important;
+  font-size:10px !important;
+  line-height:1.18 !important;
+  font-weight:400 !important;
+  display:block !important;
+  overflow:visible !important;
+  -webkit-line-clamp:unset !important;
+  -webkit-box-orient:unset !important;
+}
+.scheduleMetrics{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-end !important;
+  justify-content:flex-start !important;
+  gap:2px !important;
+  min-width:86px !important;
+  text-align:right !important;
+  flex:0 0 86px;
+}
+.scheduleMetrics strong{
+  color:#00E5FF !important;
+  font-size:13px !important;
+  line-height:1.05 !important;
+  font-weight:700 !important;
+  white-space:nowrap !important;
+}
+.scheduleMetrics small{
+  display:block !important;
+  color:#AEB8DD !important;
+  font-size:8px !important;
+  line-height:1.12 !important;
+  white-space:nowrap !important;
+}
+
+
+/* v85 make schedule grid more compact vertically */
+.minuteScheduleList{gap:1px !important;}
+.minuteScheduleRow{
+  padding:6px 0 5px !important;
+  gap:8px !important;
+  min-height:auto !important;
+}
+.minuteScheduleRow .scheduleMain b{
+  margin-bottom:1px !important;
+  font-size:10.5px !important;
+  line-height:1.02 !important;
+}
+.minuteScheduleRow .scheduleMain span{
+  font-size:9.5px !important;
+  line-height:1.08 !important;
+  margin-top:0 !important;
+}
+.scheduleMetrics{
+  gap:1px !important;
+  min-width:84px !important;
+  flex:0 0 84px !important;
+}
+.scheduleMetrics strong{
+  font-size:12.5px !important;
+  line-height:1 !important;
+}
+.scheduleMetrics small{
+  font-size:7.6px !important;
+  line-height:1.02 !important;
+}
+
+
+/* v87 minute competitor filters and grid */
+.minuteFiltersRow,.minuteFiltersInline{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.minuteFiltersRow label,.minuteFiltersInline label{display:flex;flex-direction:column;gap:4px;font-size:9px;color:#AEB8DD}
+.minuteFiltersRow select,.minuteFiltersInline select{height:30px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#fff;padding:0 10px;font-size:10px}
+.scheduleAdTag{display:inline-flex;align-items:center;gap:4px;margin-top:3px;color:#C8CEDA;font-size:7.6px;line-height:1;background:rgba(185,190,205,.18);padding:3px 6px;border-radius:999px;width:max-content}
+.minuteScheduleRow.withAds{border-left:2px solid rgba(210,216,226,.45);padding-left:6px !important}
+.lineLegend{display:flex;gap:10px;align-items:center;margin:0 0 6px;font-size:9px;color:#DCE4FF}
+.lineLegend span{display:inline-flex;align-items:center;gap:5px}
+.lineLegend i{display:inline-block;width:16px;height:2px;background:#00E5FF;border-radius:999px}
+.lineLegend .tntLineKey{background:#20CFFF}
+.minuteLine{stroke:#20CFFF !important;stroke-width:1.4 !important;fill:none !important;filter:none !important}
+.minutePoint{fill:#20CFFF !important;stroke:#20CFFF !important;stroke-width:.6 !important}
+.minuteAxisText{fill:#FFFFFF !important;opacity:.92 !important;font-size:9px !important}
+.adBand{fill:rgba(235,238,244,.45) !important;opacity:1 !important}
+.compFilterWrap{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin:8px 0 10px}
+.compChip{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#DCE4FF;border-radius:999px;padding:6px 10px;font-size:9px;white-space:nowrap}
+.compChip.on{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.10)}
+.compChip i{width:8px;height:8px;border-radius:50%;display:inline-block;flex:0 0 8px}
+.compGridScroll{overflow-x:auto;padding-bottom:8px}
+.compMinuteTable{border-collapse:collapse;min-width:820px;width:max-content}
+.compMinuteTable th,.compMinuteTable td{border:1px solid rgba(255,255,255,.09);padding:5px 6px;vertical-align:top}
+.compMinuteTable th{font-size:9px;line-height:1.1;color:#FFFFFF;background:rgba(255,255,255,.06)}
+.compMinuteTable td{font-size:8.2px;line-height:1.15;color:#E9ECFF;background:rgba(255,255,255,.02)}
+.compMinuteTable .stickyCol{position:sticky;left:0;background:#13035C;z-index:2;min-width:70px}
+.compMinuteTable .compHead{font-size:10px;font-weight:700;background:rgba(255,255,255,.08)}
+.compMinuteTable .mainHead{color:#00E5FF}
+.compMinuteTable .compProg{min-width:132px;max-width:132px}
+.compMinuteTable .compShare{min-width:52px;text-align:right;font-weight:700;color:#FFFFFF}
+
+.entryExitGrid div.up{border-color:rgba(36,245,139,.45);background:rgba(36,245,139,.10)}
+.entryExitGrid div.down{border-color:rgba(255,86,98,.40);background:rgba(255,86,98,.10)}
+.entryExitGrid div.eq{border-color:rgba(255,255,255,.12)}
+.blueFilterCard{background:linear-gradient(180deg,rgba(0,150,255,.18),rgba(0,84,180,.16));border-color:rgba(48,214,255,.35)}
+.blueFilterTitle{font-size:10px;color:#DDE8FF;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.programCompFilter .compChip,.competitorsTopFilter .compChip{background:rgba(0,0,0,.18);border-color:rgba(111,212,255,.28)}
+.programCompFilter .compChip.on,.competitorsTopFilter .compChip.on{background:rgba(48,214,255,.22);border-color:rgba(111,212,255,.55)}
+.selectedProgramCard{margin-bottom:12px}
+.minuteAdMeta{flex-wrap:wrap}
+
+.compFilterWrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;overflow:visible;padding-bottom:0;margin:8px 0 10px}
+.compChip{width:100%;justify-content:flex-start;padding:5px 7px;font-size:8px;line-height:1.15;white-space:normal;text-align:left}
+.compChip span{display:block;overflow:hidden;text-overflow:ellipsis}
+.compChipIcon{width:20px;height:20px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 20px;color:#0B1024;font-size:8px;font-weight:800;letter-spacing:.02em}
+.minuteAdTop{align-items:flex-start}
+.minuteAdTop span{color:#FFD98D;font-size:9px;text-transform:uppercase}
+.minuteAdTop b{font-size:15px;line-height:1.1}
+.minuteAdTop strong{padding:4px 7px;border-radius:999px;background:rgba(255,217,141,.14);color:#FFD98D;font-size:10px}
+.minuteAdTitleRow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.minuteAdTitleRow em{font-style:normal;color:#FFFFFF;font-size:11px;font-weight:600}
+.minuteAdTitleRow small{color:#CFE8FF;font-size:10px;font-weight:600}
+.minuteAdRight{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.minuteAdCard details{margin-top:8px}
+@media (max-width:420px){
+  .compFilterWrap{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .compChip{font-size:7.5px;padding:5px 6px}
+}
+
+/* v90 compact competitor filters */
+.programCompFilter.compFilterWrap,
+.competitorsTopFilter.compFilterWrap{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:4px !important;
+  overflow:visible !important;
+  padding-bottom:0 !important;
+  margin:8px 0 10px !important;
+}
+.programCompFilter .compChip,
+.competitorsTopFilter .compChip{
+  width:100% !important;
+  padding:4px 6px !important;
+  min-height:28px;
+  font-size:7.5px !important;
+  line-height:1.05 !important;
+  gap:5px !important;
+  white-space:normal !important;
+}
+.programCompFilter .compChip span,
+.competitorsTopFilter .compChip span{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+}
+.programCompFilter .compChipIcon,
+.competitorsTopFilter .compChipIcon{
+  width:18px !important;
+  height:18px !important;
+  flex:0 0 18px !important;
+  font-size:7px !important;
+}
+/* v90 competitor table adaptive columns */
+.compMinuteTable{
+  min-width:unset !important;
+  width:max-content !important;
+  table-layout:auto !important;
+}
+.compMinuteTable th,.compMinuteTable td{
+  padding:5px 4px !important;
+}
+.compMinuteTable .compProg{
+  min-width:74px !important;
+  max-width:104px !important;
+  width:auto !important;
+  white-space:normal !important;
+  word-break:break-word;
+}
+.compMinuteTable .compShare{
+  min-width:40px !important;
+  width:40px !important;
+  text-align:left !important;
+  padding-left:2px !important;
+  padding-right:4px !important;
+}
+.compMinuteTable .stickyCol{
+  min-width:58px !important;
+}
+.compGridScroll{overflow-x:auto}
+.minuteAdTop span{color:#CFE8FF !important;}
+.minuteAdTitleRow{gap:6px !important;}
+.minuteAdTitleRow em{font-size:10.5px !important;}
+.minuteAdTitleRow small{font-size:9.5px !important;}
+.minuteAdRight b{font-size:14px !important;}
+
+/* v91 ads full list + cleaner ad card */
+.minuteAdList{display:flex;flex-direction:column;gap:10px}
+.minuteAdCard{border-color:rgba(255,209,102,.22)}
+.minuteAdTop{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.minuteAdTitleRow{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;min-width:0}
+.minuteAdTitleRow span{display:inline-block;color:#CFE8FF !important;font-size:10px;text-transform:uppercase}
+.minuteAdTitleRow em{font-style:normal;font-size:11px;color:#FFFFFF;max-width:180px;white-space:normal;line-height:1.2}
+.minuteAdTitleRow small{font-size:10px;color:#9FD3FF}
+.minuteAdRight{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex:0 0 auto}
+.minuteAdRight b{font-size:14px;color:#fff}
+.minuteAdRight strong{padding:5px 8px;border-radius:999px;background:rgba(255,209,102,.12);color:#FFD166;font-size:10px}
+.minuteAdCard details{margin-top:8px}
+.minuteAdCard summary{cursor:pointer;color:#FFD98D}
+.minuteAdCard li{margin:6px 0;line-height:1.25}
+
+/* v92 ads programs tab */
+.minuteFooterTabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px}
+.minuteFooterTabs span{font-size:9px;line-height:1.1;padding:6px 2px;word-break:break-word}
+.minuteFooterTabs span br{line-height:1}
+.minuteTabs{display:flex;flex-wrap:wrap;gap:8px}
+.minuteTabs button{font-size:11px}
+.minuteProgramAdsList{display:flex;flex-direction:column;gap:12px}
+.minuteProgramAdsCard{padding:12px 12px 10px}
+.minuteProgramAdsHead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:8px}
+.minuteProgramAdsTitle{font-size:13px;font-weight:700;color:#fff;line-height:1.25;max-width:62%}
+.minuteProgramAdsMeta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex:0 0 auto}
+.minuteProgramAdsMeta span{font-size:11px;color:#CFE8FF}
+.minuteProgramAdsMeta strong{font-size:11px;color:#FFD166}
+.minuteProgramAdsBlocks{display:flex;flex-direction:column;gap:8px}
+.minuteProgramAdItem{padding:8px 10px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+.minuteProgramAdRow{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:6px}
+.minuteProgramAdRow span{font-size:11px;color:#9FD3FF}
+.minuteProgramAdRow b{font-size:12px;color:#fff;font-weight:700}
+.minuteProgramAdItem summary{cursor:pointer;color:#FFD98D}
+.minuteProgramAdItem li{margin:6px 0;line-height:1.25}
+
+/* v93 overview/program/competitors/ads refinements */
+.dayStrip{overflow:visible !important;gap:2px !important;padding:10px 0 6px !important;height:96px !important;}
+.dayStrip i{flex:1 1 0 !important;width:auto !important;min-width:0 !important;max-width:none !important;border-radius:7px 7px 2px 2px !important;}
+.dayStrip i span{font-size:7px !important;max-width:150px;white-space:normal !important;text-align:center;line-height:1.15}
+.topProgramRow .scheduleMetrics{min-width:58px !important;flex:0 0 58px !important;gap:0 !important}
+.topProgramRow .scheduleMetrics small{display:none !important}
+.topProgramRow.withAds{border-left:0 !important;padding-left:0 !important}
+.programCompFilter.compFilterWrap,
+.competitorsTopFilter.compFilterWrap{display:flex !important;flex-wrap:wrap !important;gap:4px !important;overflow:visible !important;margin:6px 0 8px !important}
+.programCompFilter .compChip,
+.competitorsTopFilter .compChip{width:auto !important;max-width:48% !important;flex:0 1 auto !important;padding:3px 6px !important;min-height:24px !important;font-size:7px !important;line-height:1.05 !important;gap:4px !important;border-radius:12px !important}
+.programCompFilter .compChip span,
+.competitorsTopFilter .compChip span{display:block !important;-webkit-line-clamp:1 !important;overflow:hidden;text-overflow:ellipsis;white-space:nowrap !important}
+.programCompFilter .compChipIcon,
+.competitorsTopFilter .compChipIcon{width:16px !important;height:16px !important;flex:0 0 16px !important;font-size:6.5px !important}
+.minuteAdTopStacked{display:flex;flex-direction:column;align-items:stretch;gap:5px}
+.minuteAdFirstRow,.minuteAdSecondRow{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.minuteAdFirstRow span{color:#CFE8FF !important;font-size:10px;text-transform:uppercase;font-weight:600}
+.minuteAdFirstRow b{font-size:14px !important;color:#fff;line-height:1.1;font-weight:700}
+.minuteAdSecondRow em{font-style:normal;color:#fff;font-size:11px;line-height:1.2;max-width:72%}
+.minuteAdSecondRow small{font-size:10px;color:#9FD3FF;font-weight:700;white-space:nowrap}
+
+/* v96 main report hub TNT logo image */
+.reportHubLogo.logoImage{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:92px;
+  height:52px;
+  margin:0 auto 10px;
+  border-radius:16px;
+  background:transparent;
+  box-shadow:none;
+  overflow:visible;
+}
+.reportHubLogo.logoImage img{
+  display:block;
+  max-width:92px;
+  max-height:52px;
+  object-fit:contain;
+}
+
+/* v97 robust minute card and hub logo */
+.minuteChoiceCard{cursor:pointer}
+.reportHubLogo.logoImage{display:flex;align-items:center;justify-content:center;width:92px;height:52px;margin:0 auto 10px;border-radius:16px;background:transparent;box-shadow:none;overflow:visible}
+.reportHubLogo.logoImage img{display:block;max-width:92px;max-height:52px;object-fit:contain}
+
+/* v98 minute card hard clickable */
+#minuteOpenCard{cursor:pointer;-webkit-tap-highlight-color:rgba(255,255,255,.12)}
+#minuteOpenCard:active{transform:scale(.992)}
+
+/* v99 hard fallback: hash target and card overlay */
+#reportHub{position:relative}
+#minuteOpenCard{position:relative;z-index:20;cursor:pointer;-webkit-tap-highlight-color:rgba(255,255,255,.12)}
+#minuteOpenCard .minuteCardFullLink{position:absolute;inset:0;z-index:50;border-radius:inherit;text-indent:-9999px;overflow:hidden}
+#minuteOpenCard .reportChoiceTop,#minuteOpenCard h2,#minuteOpenCard p{position:relative;z-index:2;pointer-events:none}
+#minuteReport:target{display:block !important}
+body:has(#minuteReport:target) .screen{display:none !important}
+body:has(#minuteReport:target) #minuteReport{display:block !important}
+body:has(#minuteReport:target) #environment{display:none !important}
